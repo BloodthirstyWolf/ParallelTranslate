@@ -16,7 +16,6 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            border: 2px solid #000;
         }
 
         .item {
@@ -24,35 +23,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 2px solid #000;
+            position: relative;
         }
 
-        .column:last-child .item {
-            border-right: none;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
         }
 
-        .column:first-child .item {
-            border-left: none;
-        }
-
-        .item:last-child {
-            border-bottom: none;
+        .text {
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="column">
-            <div class="item">A(1)</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
+            <div class="item">
+                <img src="Point1.png" alt="Point1">
+            </div>
+            <div class="item text">Текст 2</div>
+            <div class="item text">Текст 3</div>
+            <div class="item">
+                <img src="Point3.png" alt="Point3">
+            </div>
         </div>
         <div class="column">
-            <div class="item">Б(1)</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
+            <div class="item text">Текст 1</div>
+            <div class="item">
+                <img src="Point2.png" alt="Point2">
+            </div>
+            <div class="item text">Текст 3</div>
+            <div class="item">
+                <img src="Point4.png" alt="Point4">
+            </div>
         </div>
     </div>
 </body>
