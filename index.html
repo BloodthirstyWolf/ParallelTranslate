@@ -10,6 +10,7 @@
             width: 100%;
             height: 100vh;
             background-color: #f0f0f0;
+            position: relative; /* добавлено для позиционирования псевдоэлемента */
         }
 
         .column {
@@ -40,6 +41,17 @@
         .text {
             padding: 10px;
         }
+
+        .divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px; /* Ширина полосы */
+            background-color: black; /* Цвет полосы */
+            content: ""; /* Обязательное свойство для псевдоэлемента */
+            left: 50%; /* Размещение по центру контейнера */
+            transform: translateX(-50%); /* Сдвиг полосы влево на половину ее ширины */
+        }
     </style>
 </head>
 <body>
@@ -64,6 +76,7 @@
                 <img src="Point4.png" alt="Point4">
             </div>
         </div>
+        <div class="divider"></div> <!-- Псевдоэлемент -->
     </div>
 </body>
 </html>
