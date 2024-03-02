@@ -19,82 +19,40 @@
             border: 2px solid #000;
         }
 
-        .row {
-            flex: 1;
-            display: flex;
-            border-bottom: 2px solid #000;
-        }
-
         .item {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
         }
 
-        .row:last-child {
-            border-bottom: none;
+        .column:last-child .item {
+            border-right: none;
+        }
+
+        .column:first-child .item {
+            border-left: none;
         }
 
         .item:last-child {
-            border-right: none;
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="column">
-            <div class="row">
-                <div class="item">1</div>
-                <div class="item">2</div>
-                <div class="item">3</div>
-                <div class="item">4</div>
-            </div>
-            <div class="row">
-                <div class="item">5</div>
-                <div class="item">6</div>
-                <div class="item">7</div>
-                <div class="item">8</div>
-            </div>
-            <div class="row">
-                <div class="item">9</div>
-                <div class="item">10</div>
-                <div class="item">11</div>
-                <div class="item">12</div>
-            </div>
-            <div class="row">
-                <div class="item">13</div>
-                <div class="item">14</div>
-                <div class="item">15</div>
-                <div class="item">16</div>
-            </div>
+            <div class="item">A(1)</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
         </div>
         <div class="column">
-            <div class="row">
-                <div class="item">A</div>
-                <div class="item">B</div>
-                <div class="item">C</div>
-                <div class="item">D</div>
-            </div>
-            <div class="row">
-                <div class="item">E</div>
-                <div class="item">F</div>
-                <div class="item">G</div>
-                <div class="item">H</div>
-            </div>
-            <div class="row">
-                <div class="item">I</div>
-                <div class="item">J</div>
-                <div class="item">K</div>
-                <div class="item">L</div>
-            </div>
-            <div class="row">
-                <div class="item">M</div>
-                <div class="item">N</div>
-                <div class="item">O</div>
-                <div class="item">P</div>
-            </div>
+            <div class="item">Б(1)</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
         </div>
     </div>
 </body>
