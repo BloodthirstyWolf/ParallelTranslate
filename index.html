@@ -9,48 +9,89 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #FFFEF8; /* Изменен цвет фона внешнего контейнера */
-        }
-
-        .inner-container {
-            width: 80%;
-            margin-bottom: 20vh; /* Установлен отступ в 20% от высоты экрана */
+            margin-bottom: 20vh;
         }
 
         .title {
             text-align: center;
-            padding: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .inner-container {
+            display: flex;
+            width: 80%; /* Примерная ширина внутреннего контейнера */
+            height: auto; /* Высота контейнера автоматически подстраивается под содержимое */
+            background-color: #FFFEF8;
+            position: relative;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .text {
+            padding: 10px;
+        }
+
+        .divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px; /* Увеличена ширина полосы */
+            background-color: #003320; /* Изменен цвет полосы */
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
     <div class="outer-container">
-        <h1 class="title">Заголовок по центру</h1>
+        <div class="title">Заголовок по центру</div>
         <div class="inner-container">
-            <!-- Внутренний контейнер с флексбоксом и всеми его элементами -->
-            <div class="container">
-                <div class="column">
-                    <div class="item">
-                        <img src="Point1.png" alt="Point1">
-                    </div>
-                    <div class="item text">Текст 2</div>
-                    <div class="item text">Текст 3</div>
-                    <div class="item">
-                        <img src="Point3.png" alt="Point3">
-                    </div>
+            <div class="column">
+                <div class="item">
+                    <img src="Point1.png" alt="Point1">
                 </div>
-                <div class="column">
-                    <div class="item text">Текст 1</div>
-                    <div class="item">
-                        <img src="Point2.png" alt="Point2">
-                    </div>
-                    <div class="item text">Текст 3</div>
-                    <div class="item">
-                        <img src="Point4.png" alt="Point4">
-                    </div>
+                <div class="item text">Текст 2</div>
+                <div class="item text">Текст 3</div>
+                <div class="item">
+                    <img src="Point3.png" alt="Point3">
                 </div>
-                <div class="divider"></div>
             </div>
+            <div class="column">
+                <div class="item text">Текст 1</div>
+                <div class="item">
+                    <img src="Point2.png" alt="Point2">
+                </div>
+                <div class="item text">Текст 3</div>
+                <div class="item">
+                    <img src="Point4.png" alt="Point4">
+                </div>
+            </div>
+            <div class="divider"></div>
         </div>
     </div>
 </body>
