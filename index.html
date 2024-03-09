@@ -90,23 +90,24 @@
         .ball-container {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
+            align-items: center;
             position: relative;
             margin-bottom: 20px; /* Отступ снизу */
         }
 
         .ball {
-            width: 10%;
-            height: 10%;
+            width: 10vh; /* Установлен размер шара */
+            height: 10vh; /* Установлен размер шара */
             border-radius: 50%;
             background-color: #003320;
             position: relative;
+            margin-bottom: 20px; /* Отступ снизу */
         }
 
         .line {
             position: absolute;
             width: 4px;
-            height: calc(100% - 10%);
+            height: calc(100% - 10vh); /* Изменена высота линии */
             background-color: #003320;
             bottom: -20px; /* Высота линии */
             left: 50%;
