@@ -96,8 +96,8 @@
         }
 
         .ball {
-            width: 10vh; /* Установлен размер шара */
-            height: 10vh; /* Установлен размер шара */
+            width: 5vh; /* Установлен размер шара */
+            height: 5vh; /* Установлен размер шара */
             border-radius: 50%;
             background-color: #003320;
             position: relative;
@@ -151,6 +151,10 @@
                 background-color: #FFFEF8; /* Изменен цвет фона контейнера */
                 position: relative;
             }
+
+            .line {
+                height: calc(100% - 30vh); /* Изменена высота линии для мобильных устройств */
+            }
         }
     </style>
 </head>
@@ -196,3 +200,4 @@
     </div>
 </body>
 </html>
+ 
