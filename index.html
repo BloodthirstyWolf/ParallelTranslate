@@ -15,10 +15,12 @@
     display: flex;
     width: 50%;
     margin-bottom: 20px;
+    position: relative;
   }
 
   .image {
     width: 50%;
+    max-width: 100%;
   }
 
   .text {
@@ -33,6 +35,17 @@
     background-color: black;
     margin-top: 20px;
   }
+
+  .ball {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: #003320;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
 </head>
 <body>
@@ -43,24 +56,27 @@
       <img src="Point1.png" alt="Image">
     </div>
     <div class="text">
-      <p>Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпвдающем меню или в личном кабинете</p>
+      <p>Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
     </div>
+    <div class="ball"></div>
   </div>
   <div class="sub-container">
     <div class="image">
       <img src="Point2.png" alt="Image">
     </div>
     <div class="text">
-      <p>Добавьте необходимое вам количество абзацев и вставьте русскиц и иностранный текст для кажлого отдельного абзаца</p>
+      <p>Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
+    <div class="ball"></div>
   </div>
   <div class="sub-container">
     <div class="image">
       <img src="Point3.png" alt="Image">
     </div>
     <div class="text">
-      <p>Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы пожете добавтть возможность редактирования другим пользователям</p>
+      <p>Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
     </div>
+    <div class="ball"></div>
   </div>
   <div class="black-ball"></div>
 </div>
