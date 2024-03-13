@@ -5,87 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-  .main-container {
+  #Container3 {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .img {
-    width: 40%;
-    height: auto;
-  }
-  .sub-container {
-    display: flex;
-    width: 50%;
-    margin-bottom: 20px;
-    position: relative;
+  .title {
+    color: #003320;
+    text-align: center;
   }
 
-  .image {
-    width: 40%;
-    height: auto;
+  .empty-space {
+    height: 30vh;
+    width: 100%;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .flex-item {
+    width: 30%;
+    height: 100px;
+    border: 1px solid black;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .text {
-    width: 50%;
-    padding-left: 10px;
-  }
-
-  .black-ball {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    background-color: black;
-    margin-top: 20px;
-  }
-
-  .ball {
-    width: 5vh;
-    height: 5vh;
-    border-radius: 50%;
-    background-color: #003320;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;
   }
 </style>
 </head>
 <body>
 
-<div class="main-container">
-  <div class="sub-container">
-    <div class="image">
-      <img src="Point1.png" alt="Image">
+<div id="Container3">
+  <h1 class="title">Как использовать?</h1>
+  <div class="empty-space"></div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="point1.png" alt="Point 1">
     </div>
-    <div class="text">
+    <div class="flex-item text">
       <p>Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
     </div>
-    <div class="ball"></div>
   </div>
-  <div class="sub-container">
-    <div class="image">
-      <img src="Point2.png" alt="Image">
-    </div>
-    <div class="text">
+  <div class="flex-container">
+    <div class="flex-item text">
       <p>Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
-    <div class="ball"></div>
-  </div>
-  <div class="sub-container">
-    <div class="image">
-      <img src="Point3.png" alt="Image">
+    <div class="flex-item">
+      <img src="point2.png" alt="Point 2">
     </div>
-    <div class="text">
+  </div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="point2.png" alt="Point 2">
+    </div>
+    <div class="flex-item text">
       <p>Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
     </div>
-    <div class="ball"></div>
   </div>
-  <div class="black-ball"></div>
 </div>
 
 </body>
