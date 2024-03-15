@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
+  @font-face {
+    font-family: 'Vela Sans';
+    src: url('VelaSans-Regular.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+
   #Container3 {
     display: flex;
     flex-direction: column;
@@ -14,12 +23,12 @@
   .title {
     color: #003320;
     text-align: center;
-    text-transform: uppercase; /* Преобразование заголовка в верхний регистр */
-    font-size: 3em; /* Увеличиваем размер заголовка */
+    text-transform: uppercase;
+    font-size: 2em;
   }
 
   .empty-space {
-    height: 20vh;
+    height: 30vh;
     width: 100%;
   }
 
@@ -27,62 +36,61 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 0; /* Убираем верхний отступ */
-    margin-bottom: 0; /* Убираем нижний отступ */
-    flex-grow: 1; /* Занимаем все доступное пространство по высоте */
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
   }
 
   .flex-item {
     width: 50%;
-    height: auto; /* Изменено на автоматическую высоту */
+    height: auto;
     display: flex;
-    flex-direction: column; /* Добавлено */
-    justify-content: space-between; /* Добавлено */
-    align-items: center; /* Добавлено */
-    flex-grow: 1; /* Добавлено */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
   }
 
   .flex-item.text {
-    flex-basis: 50%; /* Задаем фиксированную ширину */
-    font-size: 3em
-    color: #003320;
+    flex-basis: 50%;
+    font-family: 'Vela Sans', sans-serif; /* Применяем пользовательский шрифт */
+    font-size: 1.2em; /* Увеличиваем размер текста */
   }
 
   .text {
     text-align: center;
     padding: 10px;
-    margin: 0; /* Убираем внутренние отступы */
-    width: 100%; /* Чтобы текст занимал всю доступную ширину */
+    margin: 0;
+    width: 100%;
   }
 
   img {
     max-width: 100%;
     max-height: 100%;
-    border: none; /* Убираем границы у изображений */
+    border: none;
   }
 
-  /* Новые стили для третьего контейнера */
   #Container3 .flex-container:last-child {
-    height: 170px; /* 170hw */
+    height: 170px;
   }
 </style>
 </head>
 <body>
 
 <div id="Container3">
-  <h1 class="title">Как пользоваться?</h1>
+  <h1 class="title">Points</h1>
   <div class="empty-space"></div>
   <div class="flex-container">
     <div class="flex-item">
       <img src="Point1.png" alt="Point 1">
     </div>
     <div class="flex-item text">
-      <p> Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
     </div>
   </div>
   <div class="flex-container">
     <div class="flex-item text">
-      <p>.Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
     <div class="flex-item">
       <img src="Point2.png" alt="Point 2">
@@ -93,7 +101,7 @@
       <img src="Point2.png" alt="Point 2">
     </div>
     <div class="flex-item text">
-      <p> Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
     </div>
   </div>
 </div>
