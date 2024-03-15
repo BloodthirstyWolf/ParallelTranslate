@@ -33,7 +33,6 @@
   .flex-item {
     width: 50%;
     height: auto; /* Изменено на автоматическую высоту */
-    border: 1px solid black;
     display: flex;
     flex-direction: column; /* Добавлено */
     justify-content: space-between; /* Добавлено */
@@ -44,12 +43,14 @@
   .text {
     text-align: center;
     padding: 10px;
+    margin: 0; /* Убираем внутренние отступы */
     width: 100%; /* Чтобы текст занимал всю доступную ширину */
   }
 
   img {
     max-width: 100%;
     max-height: 100%;
+    border: none; /* Убираем границы у изображений */
   }
 
   /* Новые стили для третьего контейнера */
