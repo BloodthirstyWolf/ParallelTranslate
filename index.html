@@ -5,103 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-  @font-face {
-    font-family: 'Vela Sans';
-    src: url('Vela Sans.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-  }
-
+  /* Стили для основного контейнера */
   #Container3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
   }
 
-  .title {
-    color: #003320;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 4em;
-  }
-
-  .empty-space {
-    height: 10vh;
+  /* Стили для контейнера с декоративными элементами */
+  #DecorativeContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 2;
   }
 
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    flex-grow: 1;
-  }
-
-  .flex-item {
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-  }
-
-  .flex-item.text {
-    flex-basis: 50%;
-    font-family: 'Vela Sans', sans-serif; /* Применяем пользовательский шрифт */
-    font-size: 3em; /* Увеличиваем размер текста */
-  }
-
-  .text {
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-    width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    border: none;
-  }
-
+  /* Стили для декоративной полосы */
+  .decorative-line {
+    position: absolute;
+    top: 20vh; /* Располагаем полосу на 20vh от верхней границы контейнера */
+    left: 0;
+    width: 5vw;
+    height: 100%;
+    background-color: #003320; /* Цвет полосы */
+    z-index: 1; /* Устанавливаем порядок слоя поверх остальных контейнеров */
   }
 </style>
 </head>
 <body>
 
+<!-- Основной контейнер -->
 <div id="Container3">
-  <h1 class="title">Points</h1>
-  <div class="empty-space"></div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point1.png" alt="Point 1">
-    </div>
-    <div class="flex-item text">
-      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item text">
-      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
-    </div>
-    <div class="flex-item">
-      <img src="Point2.png" alt="Point 2">
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point3.png" alt="Point 3">
-    </div>
-    <div class="flex-item text">
-      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
-    </div>
-  </div>
+  <!-- Контент основного контейнера -->
+</div>
+
+<!-- Контейнер с декоративными элементами -->
+<div id="DecorativeContainer">
+  <!-- Декоративная полоса -->
+  <div class="decorative-line"></div>
 </div>
 
 </body>
