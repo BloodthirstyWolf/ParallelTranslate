@@ -5,44 +5,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-  /* Стили для основного контейнера */
-  #Container3 {
+  @font-face {
+    font-family: 'Vela Sans';
+    src: url('VelaSans-Regular.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; /* Убираем отступы по умолчанию для body */
+  }
+
+  /* Новые стили для полосы */
+  #top-bar {
     position: relative;
-  }
-
-  /* Стили для контейнера с декоративными элементами */
-  #DecorativeContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 2;
+    height: 5px; /* Толщина полосы */
+    background-color: #003320;
+    top: 20vh; /* Располагаем полосу на 20% высоты экрана сверху */
+    z-index: 1; /* Помещаем полосу выше других элементов */
   }
 
-  /* Стили для декоративной полосы */
-  .decorative-line {
-    position: absolute;
-    top: 20vh; /* Располагаем полосу на 20vh от верхней границы контейнера */
-    left: 0;
-    width: 5vw;
-    height: 100%;
-    background-color: #003320; /* Цвет полосы */
-    z-index: 1; /* Устанавливаем порядок слоя поверх остальных контейнеров */
+  /* Новый контейнер */
+  #top-container {
+    position: relative;
+    width: 100%;
+    z-index: 2; /* Помещаем новый контейнер выше полосы */
+  }
+
+  #Container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Добавляем небольшой отступ сверху для визуального разделения */
+  }
+
+  .title {
+    color: #003320;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+  }
+
+  .empty-space {
+    height: 30vh;
+    width: 100%;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .flex-item {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .flex-item.text {
+    flex-basis: 50%;
+    font-family: 'Vela Sans', sans-serif;
+    font-size: 1.2em;
+  }
+
+  .text {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+  }
+
+  #Container3 .flex-container:last-child {
+    height: 170px;
   }
 </style>
 </head>
 <body>
 
-<!-- Основной контейнер -->
-<div id="Container3">
-  <!-- Контент основного контейнера -->
+<!-- Новый контейнер с полосой -->
+<div id="top-container">
+  <div id="top-bar"></div>
 </div>
 
-<!-- Контейнер с декоративными элементами -->
-<div id="DecorativeContainer">
-  <!-- Декоративная полоса -->
-  <div class="decorative-line"></div>
+<!-- Контейнер с основным содержимым -->
+<div id="Container3">
+  <h1 class="title">Points</h1>
+  <div class="empty-space"></div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point1.png" alt="Point 1">
+    </div>
+    <div class="flex-item text">
+      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item text">
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+    </div>
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+    <div class="flex-item text">
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+    </div>
+  </div>
 </div>
 
 </body>
