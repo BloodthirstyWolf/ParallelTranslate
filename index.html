@@ -1,85 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-  .main-container {
+  #Container3 {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .sub-container {
+  .title {
+    color: #003320;
+    text-align: center;
+    text-transform: uppercase; /* Преобразование заголовка в верхний регистр */
+  }
+
+  .empty-space {
+    height: 30vh;
+    width: 100%;
+  }
+
+  .flex-container {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .flex-item {
     width: 50%;
-    margin-bottom: 20px;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: auto; /* Изменено на автоматическую высоту */
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column; /* Добавлено */
+    justify-content: space-between; /* Добавлено */
+    align-items: center; /* Добавлено */
+    flex-grow: 1; /* Добавлено */
   }
 
   .text {
-    width: 50%;
-    padding-left: 10px;
+    text-align: center;
+    padding: 10px;
+    width: 100%; /* Чтобы текст занимал всю доступную ширину */
   }
 
-  .black-ball {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    background-color: black;
-    margin-top: 20px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
-  .ball {
-    width: 5vh;
-    height: 5vh;
-    border-radius: 50%;
-    background-color: #003320;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* Фоновые изображения */
-  .sub-container:nth-child(1) {
-    background-image: url("Point1.png");
-  }
-
-  .sub-container:nth-child(2) {
-    background-image: url("Point2.png");
-  }
-
-  .sub-container:nth-child(3) {
-    background-image: url("Point3.png");
+  /* Новые стили для третьего контейнера */
+  #Container3 .flex-container:last-child {
+    height: 170px; /* 170hw */
   }
 </style>
 </head>
 <body>
 
-<div class="main-container">
-  <div class="sub-container">
-    <div class="text">
-      <p>Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+<div id="Container3">
+  <h1 class="title">Points</h1>
+  <div class="empty-space"></div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point1.png" alt="Point 1">
     </div>
-    <div class="ball"></div>
-  </div>
-  <div class="sub-container">
-    <div class="text">
-      <p>Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+    <div class="flex-item text">
+      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
     </div>
-    <div class="ball"></div>
   </div>
-  <div class="sub-container">
-    <div class="text">
-      <p>Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+  <div class="flex-container">
+    <div class="flex-item text">
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
-    <div class="ball"></div>
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
   </div>
-  <div class="black-ball"></div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+    <div class="flex-item text">
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+    </div>
+  </div>
 </div>
 
 </body>
