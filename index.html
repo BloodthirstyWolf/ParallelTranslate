@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     align-items: center;
   }
 
-  .sub-container {
+  .flex-container {
     display: flex;
     width: 50%;
     margin-bottom: 20px;
@@ -20,10 +20,8 @@
 
   .image {
     width: 50%;
+    max-width: 100%;
     height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   .text {
@@ -54,22 +52,28 @@
 <body>
 
 <div class="main-container">
-  <div class="sub-container">
-    <div class="image" style="background-image: url('Point1.png');"></div>
+  <div class="flex-container">
+    <div class="image">
+      <img src="Point1.png" alt="Image">
+    </div>
     <div class="text">
       <p>Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
     </div>
     <div class="ball"></div>
   </div>
-  <div class="sub-container">
-    <div class="image" style="background-image: url('Point2.png');"></div>
+  <div class="flex-container">
+    <div class="image">
+      <img src="Point2.png" alt="Image">
+    </div>
     <div class="text">
       <p>Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
     <div class="ball"></div>
   </div>
-  <div class="sub-container">
-    <div class="image" style="background-image: url('Point3.png');"></div>
+  <div class="flex-container">
+    <div class="image">
+      <img src="Point3.png" alt="Image">
+    </div>
     <div class="text">
       <p>Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
     </div>
