@@ -7,7 +7,7 @@
 <style>
   @font-face {
     font-family: 'Vela Sans';
-    src: url('VelaSans-Regular.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
+    src: url('Vela Sans.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
   }
 
   body {
@@ -15,13 +15,15 @@
     margin: 0; /* Убираем отступы по умолчанию для body */
   }
 
-  /* Новые стили для полосы */
+  /* Новые стили для вертикальной полосы */
   #top-bar {
-    position: relative;
-    width: 100%;
-    height: 5px; /* Толщина полосы */
-    background-color: #003320;
-    top: 20vh; /* Располагаем полосу на 20% высоты экрана сверху */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5vw; /* Ширина полосы */
+    height: 100vh; /* Высота полосы, равная высоте экрана */
+    background-color: #003320; /* Цвет полосы */
     z-index: 1; /* Помещаем полосу выше других элементов */
   }
 
@@ -29,6 +31,7 @@
   #top-container {
     position: relative;
     width: 100%;
+    height: 100vh; /* Высота контейнера, равная высоте экрана */
     z-index: 2; /* Помещаем новый контейнер выше полосы */
   }
 
@@ -74,10 +77,10 @@
     flex-basis: 50%;
     font-family: 'Vela Sans', sans-serif;
     font-size: 1.2em;
+    text-align: center; /* Добавляем выравнивание текста по центру */
   }
 
   .text {
-    text-align: center;
     padding: 10px;
     margin: 0;
     width: 100%;
@@ -96,7 +99,7 @@
 </head>
 <body>
 
-<!-- Новый контейнер с полосой -->
+<!-- Новый контейнер с вертикальной полосой -->
 <div id="top-container">
   <div id="top-bar"></div>
 </div>
