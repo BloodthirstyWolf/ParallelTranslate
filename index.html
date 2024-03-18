@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   #Container3 {
     position: relative;
     display: flex;
@@ -24,127 +29,78 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 1vw; /* Измените толщину полосы по вашему желанию */
+    width: 1vw;
     height: 80vh;
     background-color: #003320;
     z-index: 1;
   }
 
-  .circle-container {
+  .circle {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    border-radius: 50%;
+    width: 5%;
+    height: 5%;
+    background-color: #003320;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Обеспечиваем, чтобы круги были поверх полосы */
-  }
-
-  .circle {
-    width: 10%; /* Радиус круга 5% экрана */
-    height: 10%; /* Радиус круга 5% экрана */
-    border-radius: 50%; /* Делаем круг */
-    background-color: #003320; /* Темно-зеленый цвет */
-    color: white; /* Белый цвет для текста внутри круга */
-    font-size: 1.5em; /* Размер текста внутри круга */
-    display: flex; /* Для вертикального и горизонтального выравнивания */
-    justify-content: center; /* Горизонтальное выравнивание по центру */
-    align-items: center; /* Вертикальное выравнивание по центру */
-  }
-
-  .circle:nth-child(2) {
-    top: 40vh; /* Расположение второго круга */
-  }
-
-  .circle:nth-child(3) {
-    top: 70vh; /* Расположение третьего круга */
-  }
-
-  .empty-space {
-    height: 30vh;
-    width: 100%;
-    position: relative;
-  }
-
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    flex-grow: 1;
-  }
-
-  .flex-item {
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-  }
-
-  .flex-item.text {
-    flex-basis: 50%;
-    font-family: 'Vela Sans', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-  }
-
-  .text {
-    padding: 10px;
-    margin: 0;
-    width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    border: none;
+    font-size: 1.5em;
   }
 </style>
 </head>
 <body>
 
-<!-- Контейнер с вертикальной полосой -->
 <div id="Container3">
   <h1 class="title">Points</h1>
-  <div id="top-bar"></div> <!-- Вертикальная полоса -->
-  <div class="circle-container">
-    <div class="circle" style="left: 50%;">1</div> <!-- Первый круг -->
-    <div class="circle" style="left: 50%;">2</div> <!-- Второй круг -->
-    <div class="circle" style="left: 50%;">3</div> <!-- Третий круг -->
+  <div id="top-bar"></div>
+  <div class="empty-space"></div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point1.png" alt="Point 1">
+    </div>
+    <div class="flex-item text">
+      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item text">
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+    </div>
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+    <div class="flex-item text">
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+    </div>
   </div>
 </div>
 
-<!-- Ваши флексбокс контейнеры -->
-<div class="flex-container">
-  <div class="flex-item">
-    <img src="Point1.png" alt="Point 1">
-  </div>
-  <div class="flex-item text">
-    <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
-  </div>
-</div>
-<div class="flex-container">
-  <div class="flex-item text">
-    <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
-  </div>
-  <div class="flex-item">
-    <img src="Point2.png" alt="Point 2">
-  </div>
-</div>
-<div class="flex-container">
-  <div class="flex-item">
-    <img src="Point2.png" alt="Point 2">
-  </div>
-  <div class="flex-item text">
-    <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
-  </div>
-</div>
+<script>
+  // Функция для создания кругов
+  function createCircles() {
+    const container = document.getElementById('Container3');
+    const circlePositions = ['10%', '50%', '70%']; // Позиции кругов относительно контейнера
+
+    // Создаем круги и добавляем им номера
+    circlePositions.forEach((position, index) => {
+      const circle = document.createElement('div');
+      circle.className = 'circle';
+      circle.style.top = '10vh'; // Вертикальная позиция круга
+      circle.style.left = position; // Горизонтальная позиция круга
+      circle.textContent = index + 1; // Номер круга
+      container.appendChild(circle); // Добавляем круг в контейнер
+    });
+  }
+
+  // Вызываем функцию создания кругов после загрузки страницы
+  window.addEventListener('load', createCircles);
+</script>
 
 </body>
 </html>
