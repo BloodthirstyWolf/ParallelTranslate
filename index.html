@@ -7,39 +7,21 @@
 <style>
   @font-face {
     font-family: 'Vela Sans';
-    src: url('Vela Sans.ttf') format('truetype'); /* Указываем путь к файлу шрифта */
+    src: url('Vela Sans.ttf') format('truetype');
   }
 
   body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0; /* Убираем отступы по умолчанию для body */
-  }
-
-  /* Стили для вертикальной полосы */
-#top-bar {
-  position: absolute; /* Позиционируем абсолютно */
-  bottom: 0; /* Размещаем полосу внизу */
-  left: 50%;
-  width: 0.5vw;
-  height: 80vh;
-  background-color: #003320;
-  z-index: 1;
-}
-
-  /* Стили для контейнера с полосой */
-  #top-container {
-    position: relative;
-    width: 100%;
-    height: 170px; /* Высота контейнера */
-    z-index: 2; /* Помещаем новый контейнер выше полосы */
+    margin: 0;
+    padding: 0; /* Убираем отступы и отступы по умолчанию для body */
   }
 
   #Container3 {
-  position: relative; /* Добавляем позиционирование */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
 
   .title {
@@ -50,9 +32,9 @@
   }
 
   .empty-space {
-    height: 30vh; /* Высота пустого пространства */
+    height: 30vh;
     width: 100%;
-    position: relative; /* Добавляем позиционирование для размещения полосы */
+    position: relative;
   }
 
   .flex-container {
@@ -78,7 +60,7 @@
     flex-basis: 50%;
     font-family: 'Vela Sans', sans-serif;
     font-size: 1.2em;
-    text-align: center; /* Добавляем выравнивание текста по центру */
+    text-align: center;
   }
 
   .text {
@@ -92,16 +74,21 @@
     max-height: 100%;
     border: none;
   }
+
+  #top-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0.5vw;
+    height: 80vh;
+    background-color: #003320;
+    z-index: 1;
+  }
 </style>
 </head>
 <body>
 
 <!-- Контейнер с вертикальной полосой -->
-<div id="top-container">
-  <div id="top-bar"></div>
-</div>
-
-<!-- Контейнер с основным содержимым -->
 <div id="Container3">
   <h1 class="title">Points</h1>
   <div class="empty-space"></div>
@@ -130,6 +117,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Получаем ссылку на контейнер и полосу
+  const container = document.getElementById('Container3');
+  const topBar = document.getElementById('top-bar');
+
+  // Обновляем положение полосы после загрузки страницы и при изменении размера окна
+  function updateTopBarPosition() {
+    const containerHeight = container.offsetHeight; // Получаем высоту контейнера
+    topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
+  }
+
+  // Вызываем функцию обновления при загрузке страницы и изменении размера окна
+  window.addEventListener('load', updateTopBarPosition);
+  window.addEventListener('resize', updateTopBarPosition);
+</script>
 
 </body>
 </html>
