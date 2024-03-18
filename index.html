@@ -75,14 +75,15 @@
     border: none;
   }
 
-  #top-bar {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0.5vw;
-    height: 80vh;
-    background-color: #003320;
-    z-index: 1;
+#top-bar {
+  position: absolute;
+  top: calc(10vh + 2em); /* Начинаем полосу после заголовка и пустого пространства */
+  left: 50%;
+  width: 0.5vw;
+  height: calc(100% - 10vh - 2em); /* Высота до конца контейнера */
+  background-color: #003320;
+  z-index: 1;
+}
   }
 </style>
 </head>
