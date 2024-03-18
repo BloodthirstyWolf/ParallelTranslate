@@ -5,17 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-  @font-face {
-    font-family: 'Vela Sans';
-    src: url('Vela Sans.ttf') format('truetype');
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0; /* Убираем отступы и отступы по умолчанию для body */
-  }
-
   #Container3 {
     position: relative;
     display: flex;
@@ -31,59 +20,35 @@
     font-size: 2em;
   }
 
-  .empty-space {
-    height: 30vh;
-    width: 100%;
-    position: relative;
+  #top-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1vw; /* Измените толщину полосы по вашему желанию */
+    height: 80vh;
+    background-color: #003320;
+    z-index: 1;
   }
 
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    flex-grow: 1;
+  .circle {
+    position: absolute;
+    width: 10%; /* Радиус круга 5% экрана */
+    height: 10%; /* Радиус круга 5% экрана */
+    border-radius: 50%; /* Делаем круг */
+    background-color: #003320; /* Темно-зеленый цвет */
+    color: white; /* Белый цвет для текста внутри круга */
+    font-size: 1.5em; /* Размер текста внутри круга */
+    display: flex; /* Для вертикального и горизонтального выравнивания */
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
   }
 
-  .flex-item {
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
+  .circle:nth-child(2) {
+    top: 40vh; /* Расположение второго круга */
   }
 
-  .flex-item.text {
-    flex-basis: 50%;
-    font-family: 'Vela Sans', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-  }
-
-  .text {
-    padding: 10px;
-    margin: 0;
-    width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    border: none;
-  }
-
-#top-bar {
-  position: absolute;
-  top: calc(10vh + 2em); /* Начинаем полосу после заголовка и пустого пространства */
-  left: 50%;
-  width: 0.5vw;
-  height: calc(100% - 10vh - 2em); /* Высота до конца контейнера */
-  background-color: #003320;
-  z-index: 1;
-}
+  .circle:nth-child(3) {
+    top: 70vh; /* Расположение третьего круга */
   }
 </style>
 </head>
@@ -92,40 +57,11 @@
 <!-- Контейнер с вертикальной полосой -->
 <div id="Container3">
   <h1 class="title">Points</h1>
-  <div class="empty-space"></div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point1.png" alt="Point 1">
-    </div>
-    <div class="flex-item text">
-      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item text">
-      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
-    </div>
-    <div class="flex-item">
-      <img src="Point2.png" alt="Point 2">
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point2.png" alt="Point 2">
-    </div>
-    <div class="flex-item text">
-      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
-    </div>
-  </div>
-  <!-- Вертикальная полоса -->
-  <div id="top-bar"></div>
+  <div id="top-bar"></div> <!-- Вертикальная полоса -->
+  <div class="circle" style="left: 50%;">1</div> <!-- Первый круг -->
+  <div class="circle" style="left: 50%;">2</div> <!-- Второй круг -->
+  <div class="circle" style="left: 50%;">3</div> <!-- Третий круг -->
 </div>
 
-<script>
-  // Получаем ссылку на контейнер и полосу
-  const container = document.getElementById('Container3');
-  const topBar = document.getElementById('top-bar');
-
-  // Обновляем положение полосы после загрузки страницы и при изменении размера окна
-  function updateTopBarPosition() {
-    const containerHeight = container.offsetHeight; // Получаем высоту
+</body>
+</html>
