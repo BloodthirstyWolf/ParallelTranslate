@@ -37,6 +37,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2; /* Обеспечиваем, чтобы круги были поверх полосы */
@@ -52,14 +53,11 @@
     display: flex; /* Для вертикального и горизонтального выравнивания */
     justify-content: center; /* Горизонтальное выравнивание по центру */
     align-items: center; /* Вертикальное выравнивание по центру */
+    margin-top: 10vh; /* Отступ сверху */
   }
 
-  .circle:nth-child(2) {
-    top: 40vh; /* Расположение второго круга */
-  }
-
-  .circle:nth-child(3) {
-    top: 70vh; /* Расположение третьего круга */
+  .circle:nth-child(1) {
+    margin-top: 0; /* Нет отступа для первого круга */
   }
 </style>
 </head>
@@ -70,9 +68,9 @@
   <h1 class="title">Points</h1>
   <div id="top-bar"></div> <!-- Вертикальная полоса -->
   <div class="circle-container">
-    <div class="circle" style="left: 50%;">1</div> <!-- Первый круг -->
-    <div class="circle" style="left: 50%;">2</div> <!-- Второй круг -->
-    <div class="circle" style="left: 50%;">3</div> <!-- Третий круг -->
+    <div class="circle">1</div> <!-- Первый круг -->
+    <div class="circle">2</div> <!-- Второй круг -->
+    <div class="circle">3</div> <!-- Третий круг -->
   </div>
 </div>
 
