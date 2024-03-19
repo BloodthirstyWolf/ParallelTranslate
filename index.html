@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
+
+/* Применяем margin-left: -5% для первого и третьего flex-item text */
+.flex-container:nth-child(1) .flex-item.text,
+.flex-container:nth-child(3) .flex-item.text {
+  margin-left: -5%;
+}
+
+/* Применяем margin-left: 5% для второго flex-item text */
+.flex-container:nth-child(2) .flex-item.text {
+  margin-left: 5%;
+}
+
 @font-face {
   font-family: 'Vela Sans';
   src: url('Vela Sans.ttf') format('truetype');
@@ -122,24 +134,27 @@ img {
   }
 }
 
-/* Медиа-запрос для десктопных устройств (ширина экрана больше 768px) */
-@media only screen and (min-width: 768px) {
-  /* Устанавливаем ширину изображений 30% */
-  .flex-item img {
+/* Медиа-запрос для десктопных устройств */
+@media only screen and (min-width: 481px) {
+  .empty-space {
+    height: 0vh;
+    width: 100%;
+    position: relative;
+  }
+  .circle {
     width: 30%;
+    height: 30%;
   }
-  
-  /* Размещаем первое и третье изображения по центру левой половины */
-  .flex-container:nth-child(1) .flex-item,
-  .flex-container:nth-child(3) .flex-item {
-    text-align: center;
+  .flex-container:nth-child(1) .flex-item:nth-child(1),
+  .flex-container:nth-child(3) .flex-item:nth-child(1) {
+    margin-left: 15%;
   }
-
-  /* Размещаем второе изображение по центру правой половины */
-  .flex-container:nth-child(2) .flex-item {
-    text-align: center;
+  .flex-container:nth-child(1) .flex-item:nth-child(2),
+  .flex-container:nth-child(3) .flex-item:nth-child(2) {
+    margin-left: -15%;
   }
 }
+
 </style>
 </head>
 <body>
@@ -158,7 +173,7 @@ img {
   </div>
   <div class="flex-container">
     <div class="flex-item text">
-      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и инострраный текст для каждого отдельного абзаца</p>
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
     </div>
     <div class="flex-item">
       <img src="Point2.png" alt="Point 2">
@@ -177,6 +192,7 @@ img {
 <!-- Вертикальная полоса -->
 <div id="top-bar"></div>
 <div id="decorative-container">
+  <div class="circle" style="top: 0vh;"></div>
   <div class="circle" style="top: 15vh;">1</div>
   <div class="circle" style="top: 40vh;">2</div>
   <div class="circle" style="top: 65vh;">3</div>
@@ -193,11 +209,10 @@ img {
     topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
   }
 
-  // Вызываем функцию обновления при загрузке страницы и изменении размера окна
-  window.addEventListener('load', updateTopBarPosition);
-  window.addEventListener('resize', updateTopBarPosition);
+// Вызываем функцию обновления при загрузке страницы и изменении размера окна
+window.addEventListener('load', updateTopBarPosition);
+window.addEventListener('resize', updateTopBarPosition);
 </script>
 
 </body>
 </html>
-
