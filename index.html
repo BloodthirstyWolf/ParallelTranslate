@@ -93,12 +93,14 @@ img {
 #top-bar {
   position: absolute;
   top: 10vh;
-  left: 50%;
+  left: 50%; /* Позиционируем относительно центра контейнера */
+  transform: translateX(-50%); /* Сдвигаем влево на половину ширины полосы */
   width: 0.8vw;
   height: 80vh;
   background-color: #003320;
   z-index: 1;
 }
+
 
 #decorative-container {
   position: absolute;
