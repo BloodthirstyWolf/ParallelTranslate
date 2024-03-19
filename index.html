@@ -98,8 +98,8 @@ img {
 
 .circle {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; /* Сдвигаем круги вправо на 50% ширины контейнера */
+  transform: translateX(-50%); /* Возвращаем круги на половину их ширины обратно влево */
   width: 5vw;
   height: 5vw;
   border-radius: 50%;
@@ -110,6 +110,27 @@ img {
   color: white;
   font-size: 1.5em;
 }
+
+/* Для первого круга */
+.circle:nth-child(1) {
+  top: 10vh; /* Положение первого круга */
+}
+
+/* Для второго круга */
+.circle:nth-child(2) {
+  top: 25vh; /* Положение второго круга */
+}
+
+/* Для третьего круга */
+.circle:nth-child(3) {
+  top: 50vh; /* Положение третьего круга */
+}
+
+/* Для четвертого круга */
+.circle:nth-child(4) {
+  top: 75vh; /* Положение четвертого круга */
+}
+
 
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 481px) {
