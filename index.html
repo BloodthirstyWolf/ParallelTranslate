@@ -34,6 +34,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  height: 150vh; /* Фиксированная высота для десктопа */
 }
 
 .title {
@@ -60,15 +61,12 @@ body {
 
 .flex-item {
   width: 50%;
-  max-width: 400px; /* Ограничение максимальной ширины */
-  height: auto; /* Автоматический расчет высоты */
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
-  padding: 20px; /* Отступы внутри элемента */
-  margin: 10px; /* Отступы снаружи элемента */
 }
 
 .flex-item.text {
@@ -93,14 +91,13 @@ img {
 #top-bar {
   position: absolute;
   top: 10vh;
-  left: 50%; /* Позиционируем относительно центра контейнера */
-  transform: translateX(-50%); /* Сдвигаем влево на половину ширины полосы */
+  left: 50%;
+  transform: translateX(-50%);
   width: 0.8vw;
   height: 80vh;
   background-color: #003320;
   z-index: 1;
 }
-
 
 #decorative-container {
   position: absolute;
@@ -126,19 +123,6 @@ img {
   font-size: 1.5em;
 }
 
-/* Медиа-запрос для десктопных устройств (ширина экрана больше 768px) */
-@media only screen and (min-width: 768px) {
-  #Container3 {
-    height: 150vh; /* Фиксированная высота контейнера */
-  }
-
-  .flex-item img {
-    max-width: 50%; /* Уменьшаем максимальную ширину изображений */
-    max-height: 50vh; /* Уменьшаем максимальную высоту изображений */
-  }
-}
-
-
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 481px) {
   .empty-space {
@@ -151,6 +135,7 @@ img {
     height: 10vw;
   }
 }
+
 </style>
 </head>
 <body>
@@ -180,7 +165,7 @@ img {
       <img src="Point2.png" alt="Point 2">
     </div>
     <div class="flex-item text">
-      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возмож      пность редактирования другим пользователям</p>
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
     </div>
   </div>
 </div>
@@ -211,4 +196,3 @@ img {
 
 </body>
 </html>
-
