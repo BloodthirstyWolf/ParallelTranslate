@@ -84,7 +84,33 @@
     background-color: #003320;
     z-index: 1;
   }
+
+    #decorative-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Устанавливаем поверх Container3 */
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5vw; /* Радиус 5% экрана */
+  height: 5vw; /* Радиус 5% экрана */
+  border-radius: 50%;
+  background-color: #003320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+}
 </style>
+
+
 </head>
 <body>
 
@@ -120,7 +146,12 @@
 
 <!-- Вертикальная полоса -->
 <div id="top-bar"></div>
-
+<div id="decorative-container">
+  <div class="circle" style="top: 15vh;">1</div>
+  <div class="circle" style="top: 40vh;">2</div>
+  <div class="circle" style="top: 65vh;">3</div>
+</div>
+  
 <script>
   // Получаем ссылку на контейнер и полосу
   const container = document.getElementById('Container3');
