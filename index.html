@@ -17,18 +17,6 @@
   margin-left: 5%;
 }
 
-@media (max-width: 481px) {
-  .circle:nth-child(1) {
-    top: 50vh;
-  }
-  .circle:nth-child(2) {
-    top: 100vh;
-  }
-  .circle:nth-child(3) {
-    top: 150vh;
-  }
-}
-
 @font-face {
   font-family: 'Vela Sans';
   src: url('Vela Sans.ttf') format('truetype');
@@ -133,6 +121,18 @@ img {
   font-size: 1.5em;
 }
 
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 481px) {
+  .circle:nth-child(1) {
+    top: 30vh;
+  }
+  .circle:nth-child(2) {
+    top: 60vh;
+  }
+  .circle:nth-child(3) {
+    top: 90vh;
+  }
+}
 </style>
 </head>
 <body>
