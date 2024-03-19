@@ -44,7 +44,7 @@ body {
 }
 
 .empty-space {
-  height: 30vh;
+  height: 10vh;
   width: 100%;
   position: relative;
 }
@@ -59,7 +59,7 @@ body {
 }
 
 .flex-item {
-  width: 50%;
+  width: 30%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -123,6 +123,11 @@ img {
 
 /* Медиа-запрос для мобильных устройств */
 @media only screen and (max-width: 481px) {
+
+  .flex-item {
+  width: 50%;
+}
+  
   .empty-space {
   height: 0vh;
   width: 100%;
