@@ -44,7 +44,7 @@ body {
 }
 
 .empty-space {
-  height: 0vh;
+  height: 30vh;
   width: 100%;
   position: relative;
 }
@@ -122,15 +122,35 @@ img {
 }
 
 /* Медиа-запрос для мобильных устройств */
-@media (max-width: 481px) {
+/* Медиа-запрос для мобильных устройств (ширина экрана меньше 481px) */
+@media only screen and (max-width: 481px) {
   .circle:nth-child(1) {
-    top: 40vh;
+    top: 50vh;
   }
   .circle:nth-child(2) {
-    top: 80vh;
+    top: 100vh;
   }
   .circle:nth-child(3) {
-    top: 120vh;
+    top: 150vh;
+  }
+}
+
+/* Медиа-запрос для устройств с шириной экрана 481px и более */
+@media only screen and (min-width: 481px) {
+  .circle:nth-child(1) {
+    top: 30vh;
+  }
+  .circle:nth-child(2) {
+    top: 60vh;
+  }
+  .circle:nth-child(3) {
+    top: 90vh;
+  }
+}
+  .empty-space {
+  height: 0vh;
+  width: 100%;
+  position: relative;
   }
 }
 </style>
@@ -193,4 +213,3 @@ img {
 
 </body>
 </html>
-
