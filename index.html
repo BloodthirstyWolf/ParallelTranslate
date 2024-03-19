@@ -77,13 +77,15 @@ img {
 
 #top-bar {
   position: absolute;
-  top: 10vh;
-  left: 50%;
+  top: 0;
+  left: 50%; /* Сдвигаем полосу вправо на 50% ширины контейнера */
+  transform: translateX(-50%); /* Возвращаем полосу на половину ее ширины обратно влево */
   width: 0.8vw;
-  height: 80vh;
+  height: 100vh; /* Меняем высоту на 100vh, чтобы полоса охватывала всю высоту экрана */
   background-color: #003320;
   z-index: 1;
 }
+
 
 #decorative-container {
   position: absolute;
