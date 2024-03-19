@@ -121,38 +121,6 @@ img {
   font-size: 1.5em;
 }
 
-/* Медиа-запрос для мобильных устройств */
-/* Медиа-запрос для мобильных устройств (ширина экрана меньше 481px) */
-@media only screen and (max-width: 481px) {
-  .circle:nth-child(1) {
-    top: 50vh;
-  }
-  .circle:nth-child(2) {
-    top: 100vh;
-  }
-  .circle:nth-child(3) {
-    top: 150vh;
-  }
-}
-
-/* Медиа-запрос для устройств с шириной экрана 481px и более */
-@media only screen and (min-width: 481px) {
-  .circle:nth-child(1) {
-    top: 30vh;
-  }
-  .circle:nth-child(2) {
-    top: 60vh;
-  }
-  .circle:nth-child(3) {
-    top: 90vh;
-  }
-}
-  .empty-space {
-  height: 0vh;
-  width: 100%;
-  position: relative;
-  }
-}
 </style>
 </head>
 <body>
@@ -190,9 +158,9 @@ img {
 <!-- Вертикальная полоса -->
 <div id="top-bar"></div>
 <div id="decorative-container">
-  <div class="circle" style="top: 15vh;">1</div>
-  <div class="circle" style="top: 40vh;">2</div>
-  <div class="circle" style="top: 65vh;">3</div>
+  <div class="circle" style="top: 30vh;">1</div>
+  <div class="circle" style="top: 60vh;">2</div>
+  <div class="circle" style="top: 90vh;">3</div>
 </div>
   
 <script>
