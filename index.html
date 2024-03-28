@@ -123,10 +123,10 @@
 
         #top-bar {
             position: absolute;
-            top: 12.5vh;
+            top: calc(10vh + 7vw); /* Начало полосы у первого круга */
             left: 50%;
             width: 0.8vw;
-            height: 75vh;
+            height: calc(75vh + 7vw); /* Высота полосы до последнего круга */
             background-color: #003320;
             z-index: 1;
             transform: translateX(-50%);
@@ -179,7 +179,8 @@
     
     <!-- Вертикальная полоса -->
     <div id="top-bar"></div>
-
+    
+    <!-- Скрипт для обновления положения полосы -->
     <script>
         // Получаем ссылку на контейнер и полосу
         const container = document.getElementById('Container2');
