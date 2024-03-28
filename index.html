@@ -43,9 +43,8 @@
 
         .container {
             width: 100%;
-            height: 100vh;
             background-image: url(background1.png);
-            background-size: 100% 100%;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
@@ -67,6 +66,8 @@
             align-items: center;
             margin-top: 10px;
             background-color: #FFFEF8; /* Фоновый цвет */
+            padding-top: 20px; /* Добавляем отступ сверху */
+            padding-bottom: 20px; /* Добавляем отступ снизу */
         }
 
         .title {
@@ -145,8 +146,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
-    
-    <!-- Добавленный третий контейнер -->
+    <!-- Контейнер с вертикальной полосой -->
     <div id="Container2">
         <h1 class="title">Как пользоваться?</h1>
         <div class="empty-space"></div>
@@ -175,10 +175,8 @@
             </div>
         </div>
     </div>
-    
     <!-- Вертикальная полоса -->
     <div id="top-bar"></div>
-
     <script>
         // Получаем ссылку на контейнер и полосу
         const container = document.getElementById('Container2');
