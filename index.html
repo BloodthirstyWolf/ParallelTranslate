@@ -1,235 +1,112 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>третий контейнер</title>
-<style>
-@font-face {
-  font-family: 'Vela Sans';
-  src: url('Vela Sans.ttf') format('truetype');
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background-color: #003320;
+        }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+        header {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+        }
 
-#Container3 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-}
+        .header-image {
+            width: 100%;
+            display: block;
+        }
 
-.title {
-  color: #003320;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2em;
-}
+        .top-right-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
 
-.empty-space {
-  height: 10vh;
-  width: 100%;
-  position: relative;
-}
+        .top-right-buttons button {
+            background-color: transparent;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-left: 10px;
+            color: #FFFEF8;
+            font-size: 16px;
+        }
 
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  flex-grow: 1;
-}
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: url(background1.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.flex-item {
-  width: 50%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 1;
-}
+        .content {
+            width: 50%;
+            color: #FFFEF8;
+            text-align: center;
+        }
 
-.flex-item.text {
-  flex-basis: 45%;
-  font-family: 'Vela Sans', sans-serif;
-  font-size: 1.2em;
-  text-align: center;
-}
+        .second-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #003320;
+            color: #FFFEF8;
+        }
 
-.text {
-  padding: 10px;
-  margin: 0;
-  width: 100%;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-  border: none;
-}
-
-#top-bar {
-  position: absolute;
-  top: 12.5vh; /* Начало полосы находится на высоте 12.5vh (центр первого круга) */
-  left: 50%;
-  width: 0.8vw;
-  height: 75vh; /* Высота полосы соответствует расстоянию между кругами */
-  background-color: #003320;
-  z-index: 1;
-  transform: translateX(-50%); /* Центрируем полосу по горизонтали */
-}
-
-
-
-#decorative-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.circle {
-  position: absolute;
-  left: 50%; /* Сдвигаем круги вправо на 50% ширины контейнера */
-  transform: translateX(-50%); /* Возвращаем круги на половину их ширины обратно влево */
-  width: 7vw;
-  height: 7vw;
-  border-radius: 50%;
-  background-color: #003320;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.5em;
-}
-
-/* Для первого круга */
-.circle:nth-child(1) {
-  top: 10vh; /* Положение первого круга */
-}
-
-/* Для второго круга */
-.circle:nth-child(2) {
-  top: calc(45vh + 20%); /* Положение второго круга */
-}
-
-/* Для третьего круга */
-.circle:nth-child(3) {
-  top: calc(75vh + 20%); /* Положение третьего круга */
-}
-
-/* Для четвертого круга */
-.circle:nth-child(4) {
-  top: calc(125vh + 20%); /* Положение четвертого круга */
-}
-
-/* Медиа-запрос для мобильных устройств */
-@media only screen and (max-width: 481px) {
-  .empty-space {
-    height: 0vh;
-    width: 100%;
-    position: relative;
-  }
-  .circle {
-    width: 13vw;
-    height: 13vw;
-    font-size: 1.7em;
-  }
-
-  #top-bar {
-    width: 1.5vw;
-  }
-}
-
-/* Медиа-запрос для десктопных устройств (ширина экрана больше 768px) */
-@media only screen and (min-width: 768px) {
-  /* Устанавливаем ширину изображений 30% */
-  .flex-item img {
-    width: 30%;
-  }
-  
-  /* Размещаем первое и третье изображения по центру левой половины */
-  .flex-container:nth-child(1) .flex-item,
-  .flex-container:nth-child(3) .flex-item {
-    text-align: center;
-  }
-
-  /* Размещаем второе изображение по центру правой половины */
-  .flex-container:nth-child(2) .flex-item {
-    text-align: center;
-  }
-}
-</style>
+        .second-container p {
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-<!-- Контейнер с вертикальной полосой -->
-<div id="Container3">
-  <h1 class="title">Как пользоваться?</h1>
-  <div class="empty-space"></div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point1.png" alt="Point 1">
+    <header>
+        <img src="header_image.png" alt="Header Image" class="header-image">
+        <div class="top-right-buttons">
+            <button>Вход</button>
+            <button>Регистрация</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
     </div>
-    <div class="flex-item text">
-      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+    <div class="second-container">
+        <p>Текст второго контейнера</p>
     </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item text">
-      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и инострраный текст для каждого отдельного абзаца</p>
-    </div>
-    <div class="flex-item">
-      <img src="Point2.png" alt="Point 2">
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-item">
-      <img src="Point3.png" alt="Point 3">
-    </div>
-    <div class="flex-item text">
-      <p>3. Вы можете просматривать итоговый результат и делиться им с другими или добавить возможность редактирования
-    </div>
-  </div>
-</div>
+    <script>
+        // Получаем ссылку на контейнер и полосу
+        const container = document.getElementById('Container3');
+        const topBar = document.getElementById('top-bar');
 
-<!-- Вертикальная полоса -->
-<div id="top-bar"></div>
-<div id="decorative-container">
-  <div class="circle" </div> <!-- Пустой круг для начала -->
-  <div class="circle" >1</div>
-  <div class="circle" >2</div>
-  <div class="circle" >3</div>
-</div>
+        // Обновляем положение полосы после загрузки страницы и при изменении размера окна
+        function updateTopBarPosition() {
+            const containerHeight = container.offsetHeight; // Получаем высоту контейнера
+            topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
+        }
 
-
-
-  
-<script>
-  // Получаем ссылку на контейнер и полосу
-  const container = document.getElementById('Container3');
-  const topBar = document.getElementById('top-bar');
-
-  // Обновляем положение полосы после загрузки страницы и при изменении размера окна
-  function updateTopBarPosition() {
-    const containerHeight = container.offsetHeight; // Получаем высоту контейнера
-    topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
-  }
-
-  // Вызываем функцию обновления при загрузке страницы и изменении размера окна
-  window.addEventListener('load', updateTopBarPosition);
-  window.addEventListener('resize', updateTopBarPosition);
-</script>
-
+        // Вызываем функцию обновления при загрузке страницы и изменении размера окна
+        window.addEventListener('load', updateTopBarPosition);
+        window.addEventListener('resize', updateTopBarPosition);
+    </script>
 </body>
 </html>
-
