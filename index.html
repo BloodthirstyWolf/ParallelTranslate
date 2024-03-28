@@ -10,7 +10,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
-            background-color: #003320;
+            background-color: #FFFEF8;
         }
 
         header {
@@ -37,7 +37,7 @@
             border-radius: 10px;
             padding: 5px 10px;
             margin-left: 10px;
-            color: #FFFEF8;
+            color: #003320;
             font-size: 16px;
         }
 
@@ -55,7 +55,7 @@
 
         .content {
             width: 50%;
-            color: #FFFEF8;
+            color: #003320;
             text-align: center;
         }
 
@@ -66,6 +66,7 @@
             flex-direction: column;
             align-items: center;
             margin-top: 10px;
+            background-color: #FFFEF8;
         }
 
         .title {
@@ -119,15 +120,91 @@
             border: none;
         }
 
+        /* Полоса и круги */
         #top-bar {
             position: absolute;
-            top: 12.5vh;
+            top: calc(45vh + 20%); /* Начало полосы находится на уровне второго круга */
             left: 50%;
             width: 0.8vw;
             height: 75vh;
             background-color: #003320;
             z-index: 1;
             transform: translateX(-50%);
+        }
+
+        #decorative-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .circle {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: #003320;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        /* Для первого круга */
+        .circle:nth-child(1) {
+            top: 10vh;
+        }
+
+        /* Для второго круга */
+        .circle:nth-child(2) {
+            top: calc(45vh + 20%);
+        }
+
+        /* Для третьего круга */
+        .circle:nth-child(3) {
+            top: calc(75vh + 20%);
+        }
+
+        /* Для четвертого круга */
+        .circle:nth-child(4) {
+            top: calc(125vh + 20%);
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media only screen and (max-width: 481px) {
+            .empty-space {
+                height: 0vh;
+                width: 100%;
+                position: relative;
+            }
+            .circle {
+                width: 13vw;
+                height: 13vw;
+                font-size: 1.7em;
+            }
+            #top-bar {
+                width: 1.5vw;
+            }
+        }
+
+        /* Медиа-запрос для десктопных устройств (ширина экрана больше 768px) */
+        @media only screen and (min-width: 768px) {
+            .flex-item img {
+                width: 30%;
+            }
+            .flex-container:nth-child(1) .flex-item,
+            .flex-container:nth-child(3) .flex-item {
+                text-align: center;
+            }
+            .flex-container:nth-child(2) .flex-item {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -144,8 +221,8 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
-    
-    <!-- Добавленный третий контейнер -->
+
+    <!-- Контейнер с вертикальной полосой -->
     <div id="Container2">
         <h1 class="title">Как пользоваться?</h1>
         <div class="empty-space"></div>
@@ -170,13 +247,19 @@
                 <img src="Point3.png" alt="Point 3">
             </div>
             <div class="flex-item text">
-                <p>3. Вы можете просматривать итоговый результат и делиться им с другими или добавить возможность редактирования
+                <p>3. Вы можете просматривать итоговый результат и делиться им с другими или добавить возможность редактирования</p>
             </div>
         </div>
     </div>
-    
+
     <!-- Вертикальная полоса -->
     <div id="top-bar"></div>
+    <!-- Круги -->
+    <div id="decorative-container">
+        <div class="circle">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+    </div>
 
     <script>
         // Получаем ссылку на контейнер и полосу
