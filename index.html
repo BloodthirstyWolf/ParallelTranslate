@@ -10,7 +10,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
-            background-color: #003320;
+            background-color: #FFFEF8; /* Изменен цвет фона */
         }
 
         header {
@@ -37,7 +37,7 @@
             border-radius: 10px;
             padding: 5px 10px;
             margin-left: 10px;
-            color: #FFFEF8;
+            color: #003320; /* Изменен цвет текста */
             font-size: 16px;
         }
 
@@ -51,12 +51,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #FFFEF8; /* Фоновый цвет */
         }
 
         .content {
             width: 50%;
-            color: #FFFEF8;
+            color: #003320; /* Изменен цвет текста */
             text-align: center;
         }
 
@@ -67,7 +66,7 @@
             flex-direction: column;
             align-items: center;
             margin-top: 10px;
-            background-color: #FFFEF8; /* Фоновый цвет */
+            background-color: #FFFEF8; /* Изменен цвет фона */
         }
 
         .title {
@@ -123,10 +122,10 @@
 
         #top-bar {
             position: absolute;
-            top: calc(10vh + 7vw); /* Начало полосы у первого круга */
+            top: 12.5vh;
             left: 50%;
             width: 0.8vw;
-            height: calc(75vh + 7vw); /* Высота полосы до последнего круга */
+            height: 75vh;
             background-color: #003320;
             z-index: 1;
             transform: translateX(-50%);
@@ -179,8 +178,7 @@
     
     <!-- Вертикальная полоса -->
     <div id="top-bar"></div>
-    
-    <!-- Скрипт для обновления положения полосы -->
+
     <script>
         // Получаем ссылку на контейнер и полосу
         const container = document.getElementById('Container2');
