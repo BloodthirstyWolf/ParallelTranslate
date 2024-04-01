@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <style>
-        :root {
-            --dark-green: #003320;
-            --cream: #FFFEF8;
-        }
-
         body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
-            background-color: var(--cream);
+            background-color: #FFFEF8;
         }
 
         header {
@@ -37,14 +32,19 @@
         }
 
         .top-right-buttons button {
-            background-color: transparent;
-            border: 2px solid var(--dark-green); /* Добавляем границу */
-            border-radius: 20px; /* Круглые края */
-            padding: 5px 20px; /* Подбираем отступы */
+            background-color: #FFFEF8;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 20px;
             margin-left: 10px;
-            color: var(--dark-green);
+            color: #003320;
             font-size: 16px;
-            cursor: pointer; /* Добавляем указатель при наведении */
+            cursor: pointer;
+        }
+
+        .top-right-buttons button:hover {
+            background-color: #003320;
+            color: #FFFEF8;
         }
 
         .container {
@@ -61,11 +61,11 @@
 
         .content {
             width: 50%;
-            color: var(--dark-green);
+            color: #003320;
             text-align: center;
         }
 
-        /* Остальные стили оставляем без изменений */
+        /* Остальные стили остаются без изменений */
     </style>
 </head>
 <body>
