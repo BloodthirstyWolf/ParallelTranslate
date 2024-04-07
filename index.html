@@ -16,6 +16,15 @@ body {
   padding: 0;
 }
 
+#header-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  background-image: url('header_image.png');
+  background-size: cover;
+}
+
 #Container3 {
   position: relative;
   display: flex;
@@ -86,7 +95,12 @@ img {
   transform: translateX(-50%); /* Центрируем полосу по горизонтали */
 }
 
-
+#second-container {
+  background-image: url('background1.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
 
 #decorative-container {
   position: absolute;
@@ -172,6 +186,16 @@ img {
 </head>
 <body>
 
+<!-- Липкий хедер (первый контейнер) -->
+<div id="header-container">
+  <!-- Здесь можно разместить содержимое вашего хедера -->
+</div>
+
+<!-- Второй контейнер -->
+<div id="second-container">
+  <!-- Здесь можно разместить содержимое второго контейнера -->
+</div>
+
 <!-- Контейнер с вертикальной полосой -->
 <div id="Container3">
   <h1 class="title">Как пользоваться?</h1>
@@ -211,25 +235,5 @@ img {
   <div class="circle" >3</div>
 </div>
 
-
-
-  
-<script>
-  // Получаем ссылку на контейнер и полосу
-  const container = document.getElementById('Container3');
-  const topBar = document.getElementById('top-bar');
-
-  // Обновляем положение полосы после загрузки страницы и при изменении размера окна
-  function updateTopBarPosition() {
-    const containerHeight = container.offsetHeight; // Получаем высоту контейнера
-    topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
-  }
-
-  // Вызываем функцию обновления при загрузке страницы и изменении размера окна
-  window.addEventListener('load', updateTopBarPosition);
-  window.addEventListener('resize', updateTopBarPosition);
-</script>
-
 </body>
 </html>
-
