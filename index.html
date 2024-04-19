@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Container Example</title>
 <style>
-/* Примеры стилей */
+
 /* Применяем margin-left: -5% для первого и третьего flex-item text */
 .flex-container:nth-child(1) .flex-item.text,
 .flex-container:nth-child(3) .flex-item.text {
@@ -17,27 +17,6 @@
   margin-left: 5%;
 }
 
-/* Для первого круга */
-.circle:nth-child(1) {
-  top: 10vh; /* Положение первого круга */
-}
-
-/* Для второго круга */
-.circle:nth-child(2) {
-  top: calc(10vh + 20%); /* Положение второго круга */
-}
-
-/* Для третьего круга */
-.circle:nth-child(3) {
-  top: calc(30vh + 20%); /* Положение третьего круга */
-}
-
-/* Для четвертого круга */
-.circle:nth-child(4) {
-  top: calc(50vh + 20%); /* Положение четвертого круга */
-}
-
-/* Остальные стили */
 @font-face {
   font-family: 'Vela Sans';
   src: url('Vela Sans.ttf') format('truetype');
@@ -62,12 +41,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-size: 2em;
-}
-
-.empty-space {
-  height: 30vh;
-  width: 100%;
-  position: relative;
 }
 
 .flex-container {
@@ -131,8 +104,8 @@ img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 5vw;
-  height: 5vw;
+  width: 3em; /* Размер кругов */
+  height: 3em; /* Размер кругов */
   border-radius: 50%;
   background-color: #003320;
   display: flex;
@@ -141,6 +114,26 @@ img {
   color: white;
   font-size: 1.5em;
 }
+
+/* Для первого круга */
+.circle:nth-child(1) {
+  top: 10vh; /* Положение первого круга */
+}
+
+/* Для второго круга */
+.circle:nth-child(2) {
+  top: 45vh; /* Положение второго круга */
+}
+
+/* Для третьего круга */
+.circle:nth-child(3) {
+  top: 65vh; /* Положение третьего круга */
+}
+
+/* Для четвертого круга */
+.circle:nth-child(4) {
+  top: 85vh; /* Положение четвертого круга */
+}
 </style>
 </head>
 <body>
@@ -148,7 +141,6 @@ img {
 <!-- Контейнер с вертикальной полосой -->
 <div id="Container3">
   <h1 class="title">Points</h1>
-  <div class="empty-space"></div>
   <div class="flex-container">
     <div class="flex-item">
       <img src="Point1.png" alt="Point 1">
