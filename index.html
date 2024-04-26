@@ -62,7 +62,7 @@ body {
   flex-grow: 1;
 }
 
-  .flex-item img {
+.flex-item img {
   width: 70%; /* изображения занимают 100% ширины родительского элемента */
   height: auto; /* высота автоматически регулируется */
 }
@@ -74,7 +74,6 @@ body {
   font-size: 2em;
   padding: 10%; /* добавляем отступы */
   text-align: center;
-
 }
 
 .text {
@@ -82,8 +81,6 @@ body {
   margin: 0;
   width: 100%;
 }
-
-
 
 #top-bar {
   position: absolute;
@@ -111,15 +108,15 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 2em; /* Размер кругов */
-  height: 2em; /* Размер кругов */
+  width: 4em; /* Размер кругов */
+  height: 4em; /* Размер кругов */
   border-radius: 50%;
   background-color: #003320;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 4em;
+  font-size: 1.5em;
 }
 
 /* Для первого круга */
@@ -142,36 +139,18 @@ body {
   top: 75vh; /* Положение четвертого круга */
 }
 
-  @media screen and (max-width: 480px) 
+@media screen and (max-width: 480px) {
+  .flex-item img {
+    width: 100%; /* изображения занимают 100% ширины родительского элемента */
+    height: auto; /* высота автоматически регулируется */
+  }
 
-   .flex-item img {
-  width: 100%; /* изображения занимают 100% ширины родительского элемента */
-  height: auto; /* высота автоматически регулируется */
-}
   /* Уменьшенный размер кругов и номеров на мобильных устройствах */
   .circle {
     width: 1.5em; /* уменьшаем размер кругов */
     height: 1.5em; /* уменьшаем размер кругов */
     font-size: 1em; /* уменьшаем размер шрифта */
-
-    /* Для первого круга */
-.circle:nth-child(1) {
-  top: 10vh; /* Положение первого круга */
-}
-
-/* Для второго круга */
-.circle:nth-child(2) {
-  top: 28vh; /* Положение второго круга */
-}
-
-/* Для третьего круга */
-.circle:nth-child(3) {
-  top: 55vh; /* Положение третьего круга */
-}
-
-/* Для четвертого круга */
-.circle:nth-child(4) {
-  top: 75vh; /* Положение четвертого круга */
+  }
 }
 </style>
 </head>
