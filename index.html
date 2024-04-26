@@ -113,8 +113,8 @@ img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 2em; /* Размер кругов */
-  height: 2em; /* Размер кругов */
+  width: 4em; /* Размер кругов */
+  height: 4em; /* Размер кругов */
   border-radius: 50%;
   background-color: #003320;
   display: flex;
@@ -143,6 +143,13 @@ img {
 .circle:nth-child(4) {
   top: 75vh; /* Положение четвертого круга */
 }
+
+  @media screen and (max-width: 480px) 
+  /* Уменьшенный размер кругов и номеров на мобильных устройствах */
+  .circle {
+    width: 1.5em; /* уменьшаем размер кругов */
+    height: 1.5em; /* уменьшаем размер кругов */
+    font-size: 1em; /* уменьшаем размер шрифта */
 </style>
 </head>
 <body>
