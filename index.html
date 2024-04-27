@@ -19,27 +19,31 @@ body {
 
 /* Создаем стили для хедера */
 #header-container {
+  position: relative; /* Устанавливаем позицию относительно */
   width: 100%;
   text-align: center; /* Выравниваем текст по центру */
   color: white; /* Устанавливаем белый цвет текста */
-  background-color: #003320; /* Устанавливаем цвет фона */
-  box-sizing: border-box; /* Учитываем отступы в общей ширине и высоте элемента */
-  padding: 20px; /* Добавляем внутренние отступы */
 }
 
-/* Стили для изображения внутри хедера */
+/* Стили для фонового изображения внутри хедера */
 #header-image {
   width: 100%; /* Изображение занимает всю доступную ширину */
   height: auto; /* Автоматически регулируем высоту, чтобы сохранить пропорции */
 }
 
 /* Стили для кнопок */
+.buttons {
+  position: absolute; /* Устанавливаем позицию абсолютно */
+  top: 20px; /* Отступ сверху */
+  left: 20px; /* Отступ слева */
+}
+
 .button {
   background-color: #fffef8; /* Цвет фона кнопки */
   color: #003320; /* Цвет текста кнопки */
   padding: 10px 20px; /* Внутренние отступы кнопки */
   border-radius: 20px; /* Закругляем углы кнопки */
-  margin: 0 10px; /* Внешние отступы между кнопками */
+  margin-right: 10px; /* Внешний отступ справа */
   cursor: pointer; /* Задаем курсор при наведении на кнопку */
 }
 
@@ -170,10 +174,6 @@ body {
 <div id="header-container">
   <!-- Изображение в хедере -->
   <img id="header-image" src="header_image.png" alt="Header Image">
-  <!-- Текст в хедере -->
-  <div class="header-text">
-    <h1>Welcome to Our Website!</h1>
-  </div>
   <!-- Кнопки -->
   <div class="buttons">
     <button class="button" onclick="showNotification('Вход')">Вход</button>
