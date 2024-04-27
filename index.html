@@ -19,26 +19,19 @@ body {
 
 /* Создаем стили для хедера */
 #header-container {
-  background-image: url('header_image.png');
-  background-size: cover; /* Растягиваем фон до размеров контейнера */
-  background-repeat: no-repeat; /* Запрещаем повторение фонового изображения */
-  background-position: center bottom; /* Выравниваем изображение по центру по горизонтали и прижимаем к нижней части хедера */
   width: 100%;
-  height: auto; /* Автоматически регулируем высоту хедера для полного отображения фонового изображения */
   text-align: center; /* Выравниваем текст по центру */
   color: white; /* Устанавливаем белый цвет текста */
   padding: 20px; /* Добавляем внутренние отступы для текста */
   box-sizing: border-box; /* Учитываем отступы в общей ширине и высоте элемента */
 }
 
-
-
-/* Создаем стили для текста в хедере */
-.header-text {
-  color: white;
-  text-align: center;
-  padding: 20px; /* Добавляем внутренние отступы для текста */
+/* Стили для изображения внутри хедера */
+#header-image {
+  width: 100%; /* Изображение занимает всю доступную ширину */
+  height: auto; /* Автоматически регулируем высоту, чтобы сохранить пропорции */
 }
+
 
 /* Создаем стили для остальных контейнеров */
 .flex-container {
@@ -154,6 +147,8 @@ body {
 
 <!-- Контейнер для хедера -->
 <div id="header-container">
+  <!-- Изображение в хедере -->
+  <img id="header-image" src="header_image.png" alt="Header Image">
   <!-- Текст в хедере -->
   <div class="header-text">
     <h1>Welcome to Our Website!</h1>
