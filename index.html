@@ -45,6 +45,12 @@ body {
   border-radius: 20px; /* Закругляем углы кнопки */
   margin-right: 10px; /* Внешний отступ справа */
   cursor: pointer; /* Задаем курсор при наведении на кнопку */
+  transition: background-color 0.3s, color 0.3s; /* Анимация при изменении цвета */
+}
+
+.button:hover {
+  background-color: #003320; /* Цвет фона кнопки при наведении */
+  color: white; /* Цвет текста кнопки при наведении */
 }
 
 /* Создаем стили для остальных контейнеров */
@@ -178,8 +184,8 @@ body {
   <div class="buttons">
     <button class="button" onclick="showNotification('Вход')">Вход</button>
     <button class="button" onclick="showNotification('Регистрация')">Регистрация</button>
-    <button class="button">Создать страницу</button>
-    <button class="button">FAQ</button>
+    <button class="button" onclick="showNotification('Создать страницу')">Создать страницу</button>
+    <button class="button" onclick="showNotification('FAQ')">FAQ</button>
   </div>
 </div>
 
