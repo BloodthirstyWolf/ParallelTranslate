@@ -22,6 +22,13 @@
   src: url('Vela Sans.ttf') format('truetype');
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Создаем стили для хедера */
 #header-container {
   background-image: url('header_image.png'); /* Задаем фоновое изображение */
   background-size: cover; /* Растягиваем фон до размеров контейнера */
@@ -35,27 +42,7 @@
   padding: 20px; /* Добавляем внутренние отступы для текста */
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-#Container3 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.title {
-  color: #003320;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2em;
-}
-
+/* Создаем стили для остальных контейнеров */
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -80,7 +67,6 @@ body {
   height: auto; /* высота автоматически регулируется */
 }
 
-  
 .flex-item.text {
   flex-basis: 45%;
   font-family: 'Vela Sans', sans-serif;
@@ -106,7 +92,6 @@ body {
   z-index: 1;
   margin: 0 auto; /* Добавлено */
 }
-
 
 #decorative-container {
   position: absolute;
@@ -169,7 +154,6 @@ body {
 </head>
 <body>
 
-  
 <!-- Контейнер для хедера -->
 <div id="header-container">
   <!-- Текст в хедере -->
@@ -178,10 +162,8 @@ body {
   </div>
 </div>
 
-  
 <!-- Контейнер с вертикальной полосой -->
 <div id="Container3">
-  <h1 class="title">Points</h1>
   <div class="flex-container">
     <div class="flex-item">
       <img src="Point1.png" alt="Point 1">
