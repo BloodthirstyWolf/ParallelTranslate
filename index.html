@@ -136,6 +136,19 @@ body {
   top: 190vh; /* Положение четвертого круга */
 }
 
+/* Стили для всплывающего уведомления */
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 51, 32, 0.9); /* Цвет фона уведомления */
+  color: white; /* Цвет текста уведомления */
+  padding: 20px; /* Внутренние отступы уведомления */
+  border-radius: 10px; /* Закругляем углы уведомления */
+  z-index: 9999; /* Устанавливаем высокий индекс слоя */
+}
+
 @media screen and (max-width: 480px) {
   .flex-item img {
     width: 100%; /* изображения занимают 100% ширины родительского элемента */
@@ -163,8 +176,8 @@ body {
   </div>
   <!-- Кнопки -->
   <div class="buttons">
-    <button class="button">Вход</button>
-    <button class="button">Регистрация</button>
+    <button class="button" onclick="showNotification('Вход')">Вход</button>
+    <button class="button" onclick="showNotification('Регистрация')">Регистрация</button>
     <button class="button">Создать страницу</button>
     <button class="button">FAQ</button>
   </div>
@@ -206,21 +219,20 @@ body {
   <div class="circle">2</div>
   <div class="circle">3</div>
 </div>
+
+<!-- Всплывающее уведомление -->
+<div id="notification" class="notification" style="display: none;"></div>
   
 <script>
-  // Получаем ссылку на контейнер и полосу
-  const container = document.getElementById('Container3');
-  const topBar = document.getElementById('top-bar');
-
-  // Обновляем положение полосы после загрузки страницы и при изменении размера окна
-  function updateTopBarPosition() {
-    const containerHeight = container.offsetHeight; // Получаем высоту контейнера
-    topBar.style.height = containerHeight + 'px'; // Устанавливаем высоту полосы равной высоте контейнера
+  // Функция для показа всплывающего уведомления
+  function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
+    notification.style.display = 'block';
+    setTimeout(() => {
+      notification.style.display = 'none';
+    }, 3000); // Скрыть уведомление через 3 секунды
   }
-
-  // Вызываем функцию обновления при загрузке страницы и изменении размера окна
-  window.addEventListener('load', updateTopBarPosition);
-  window.addEventListener('resize', updateTopBarPosition);
 </script>
 
 </body>
