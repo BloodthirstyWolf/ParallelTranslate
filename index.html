@@ -234,14 +234,37 @@ body {
   
 <script>
   // Функция для показа всплывающего уведомления
-  function showNotification(message) {
-    const notification = document.getElementById('notification');
-    notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
-    notification.style.display = 'block';
-    setTimeout(() => {
-      notification.style.display = 'none';
-    }, 3000); // Скрыть уведомление через 3 секунды
-  }
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
+  notification.style.display = 'block';
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 3000); // Скрыть уведомление через 3 секунды
+}
+
+// Получаем ссылки на кнопки
+const loginButton = document.getElementById('login-button');
+const registerButton = document.getElementById('register-button');
+const createPageButton = document.getElementById('create-page-button');
+const faqButton = document.getElementById('faq-button');
+
+// Добавляем обработчики событий для каждой кнопки
+loginButton.addEventListener('click', function() {
+  showNotification('Вход');
+});
+
+registerButton.addEventListener('click', function() {
+  showNotification('Регистрация');
+});
+
+createPageButton.addEventListener('click', function() {
+  showNotification('Создание страницы');
+});
+
+faqButton.addEventListener('click', function() {
+  showNotification('FAQ');
+});
 </script>
 
 </body>
