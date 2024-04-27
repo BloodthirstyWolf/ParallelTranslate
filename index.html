@@ -6,17 +6,6 @@
 <title>Registration</title>
 <style>
 
-/* Применяем margin-left: -5% для первого и третьего flex-item text */
-.flex-container:nth-child(1) .flex-item.text,
-.flex-container:nth-child(3) .flex-item.text {
-  margin-left: -0%;
-}
-
-/* Применяем margin-left: 5% для второго flex-item text */
-.flex-container:nth-child(2) .flex-item.text {
-  margin-left: 0%;
-}
-
 @font-face {
   font-family: 'Vela Sans';
   src: url('Vela Sans.ttf') format('truetype');
@@ -30,12 +19,12 @@ body {
 
 /* Создаем стили для хедера */
 #header-container {
-  background-image: url('header_image.png'); /* Задаем фоновое изображение */
-  background-size: contain; /* Изображение вписывается в контейнер */
-  background-repeat: no-repeat; /* Отключаем повторение изображения */
-  width: 100%; /* Занимает всю ширину страницы */
+  background-image: url('header_image.png');
+  background-size: cover; /* Растягиваем фон до размеров контейнера */
+  background-repeat: no-repeat; /* Запрещаем повторение фонового изображения */
+  width: 100%;
+  height: 100vh; /* Устанавливаем высоту хедера равной высоте видимой области экрана */
 }
-
 
 
 
