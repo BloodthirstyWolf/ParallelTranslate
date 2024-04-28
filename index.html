@@ -150,17 +150,17 @@ body {
 }
 
 /* Стили для всплывающего уведомления */
-.notification {
+  .notification {
   position: fixed;
-  top: 50%;
+  top: 20px; /* Расположение сверху */
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 51, 32, 0.9); /* Цвет фона уведомления */
-  color: white; /* Цвет текста уведомления */
-  padding: 20px; /* Внутренние отступы уведомления */
-  border-radius: 10px; /* Закругляем углы уведомления */
-  z-index: 9999; /* Устанавливаем высокий индекс слоя */
-}
+  transform: translateX(-50%);
+  background-color: rgba(0, 51, 32, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999;
+  }
 
 @media screen and (max-width: 480px) {
   .flex-item img {
