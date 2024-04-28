@@ -187,8 +187,8 @@ body {
   <div class="buttons">
     <button id="login-button" class="button">Вход</button>
     <button id="register-button" class="button">Регистрация</button>
-    <button id="create-page-button" class="button">Создать страницу</button>
-    <button id="faq-button" class="button">FAQ</button>
+    <a href="CreatePage.html"><button id="create-page-button" class="button">Создать страницу</button></a>
+    <a href="FAQ.html"><button id="faq-button" class="button">FAQ</button></a>
   </div>
 </div>
 
@@ -259,7 +259,7 @@ registerButton.addEventListener('click', function() {
 });
 
 createPageButton.addEventListener('click', function() {
-  showNotification('Создать страницу');
+  showNotification('Создание страницы');
 });
 
 faqButton.addEventListener('click', function() {
