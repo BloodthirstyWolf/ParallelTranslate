@@ -185,10 +185,10 @@ body {
   <img id="header-image" src="header_image.png" alt="Header Image">
   <!-- Кнопки -->
   <div class="buttons">
-    <button class="button" onclick="showNotification('Вход')">Вход</button>
-    <button class="button" onclick="showNotification('Регистрация')">Регистрация</button>
-    <button class="button" onclick="showNotification('Создать страницу')">Создать страницу</button>
-    <button class="button" onclick="showNotification('FAQ')">FAQ</button>
+    <button id="login-button" class="button">Вход</button>
+    <button id="register-button" class="button">Регистрация</button>
+    <button id="create-page-button" class="button">Создать страницу</button>
+    <button id="faq-button" class="button">FAQ</button>
   </div>
 </div>
 
@@ -233,7 +233,7 @@ body {
 <div id="notification" class="notification" style="display: none;"></div>
   
 <script>
-// Функция для показа всплывающего уведомления
+  // Функция для показа всплывающего уведомления
 function showNotification(message) {
   const notification = document.getElementById('notification');
   notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
@@ -242,6 +242,29 @@ function showNotification(message) {
     notification.style.display = 'none';
   }, 3000); // Скрыть уведомление через 3 секунды
 }
+
+// Получаем ссылки на кнопки
+const loginButton = document.getElementById('login-button');
+const registerButton = document.getElementById('register-button');
+const createPageButton = document.getElementById('create-page-button');
+const faqButton = document.getElementById('faq-button');
+
+// Добавляем обработчики событий для каждой кнопки
+loginButton.addEventListener('click', function() {
+  showNotification('Вход');
+});
+
+registerButton.addEventListener('click', function() {
+  showNotification('Регистрация');
+});
+
+createPageButton.addEventListener('click', function() {
+  showNotification('Создать страницу');
+});
+
+faqButton.addEventListener('click', function() {
+  showNotification('FAQ');
+});
 </script>
 
 </body>
