@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-o0Lu5YPNL25qoL0rXUO8E9Fj4I43isbuH3C5d/a0Kjr5Upue+g0VmF5PbPfta5d1" crossorigin="anonymous">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registration</title>
@@ -235,29 +236,55 @@ body {
 <div id="notification" class="notification" style="display: none;"></div>
   
 <script>
-  // Функция для показа всплывающего уведомления
-function showNotification(message) {
-  const notification = document.getElementById('notification');
-  notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
-  notification.style.display = 'block';
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000); // Скрыть уведомление через 3 секунды
-}
-
 // Получаем ссылки на кнопки
 const loginButton = document.getElementById('login-button');
 const registerButton = document.getElementById('register-button');
 
 // Добавляем обработчики событий для каждой кнопки
 loginButton.addEventListener('click', function() {
-  showNotification('Вход');
+  showToast('Функционал "Вход" находится в процессе разработки.');
 });
 
 registerButton.addEventListener('click', function() {
-  showNotification('Регистрация');
+  showToast('Функционал "Регистрация" находится в процессе разработки.');
 });
 
+// Функция для отображения всплывающего уведомления
+function showToast(message) {
+  // Создаем новый элемент для уведомления
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.classList.add('show');
+  toast.setAttribute('role', 'alert');
+  toast.setAttribute('aria-live', 'assertive');
+  toast.setAttribute('aria-atomic', 'true');
+
+  // Добавляем контент уведомления
+  toast.innerHTML = `
+    <div class="toast-header">
+      <strong class="me-auto">Уведомление</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ${message}
+    </div>
+  `;
+
+  // Добавляем уведомление на страницу
+  document.body.appendChild(toast);
+
+  // Инициализируем Bootstrap Toast
+  const bootstrapToast = new bootstrap.Toast(toast);
+
+  // Показываем уведомление
+  bootstrapToast.show();
+
+  // Удаляем уведомление после скрытия
+  toast.addEventListener('hidden.bs.toast', function () {
+    document.body.removeChild(toast);
+  });
+}
+  
 </script>
 
 </body>
