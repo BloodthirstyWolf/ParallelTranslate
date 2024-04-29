@@ -170,19 +170,20 @@ body {
   opacity: 1; /* Устанавливаем полную непрозрачность при активации */
 }
 
-@media screen and (max-width: 480px) {
-  .flex-item img {
-    width: 100%; /* изображения занимают 100% ширины родительского элемента */
-    height: auto; /* высота автоматически регулируется */
-  }
-
-  /* Уменьшенный размер кругов и номеров на мобильных устройствах */
-  .circle {
-    width: 1.5em; /* уменьшаем размер кругов */
-    height: 1.5em; /* уменьшаем размер кругов */
-    font-size: 1em; /* уменьшаем размер шрифта */
-  }
+/* Стили для второго контейнера */
+#second-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('background1.png'); /* Фоновое изображение */
+  background-size: cover; /* Растягиваем изображение на весь контейнер */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Цвет текста */
+  font-size: 24px; /* Размер шрифта */
 }
+
 </style>
 </head>
 <body>
@@ -198,6 +199,11 @@ body {
     <button class="button" id="create-page-button">Создать страницу</button>
     <button class="button" id="faq-button">FAQ</button>
   </div>
+</div>
+
+<!-- Второй контейнер -->
+<div id="second-container">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa ut tellus vestibulum feugiat. Sed ut arcu auctor, consequat ex at, laoreet metus. Maecenas scelerisque felis libero, sit amet placerat quam facilisis eu. Donec tempor enim nec interdum mattis. Vivamus nec tellus ultrices, sagittis velit et, ultricies eros. Vestibulum nec mi ut mi rhoncus dictum. Nullam fringilla neque dui, vel bibendum arcu varius et. Fusce condimentum velit vitae sapien efficitur tincidunt. Duis in tellus at nulla ultrices fermentum. Vivamus sagittis justo ut libero vestibulum fringilla. Nullam fringilla libero a tincidunt consectetur. Suspendisse ut aliquam metus.</p>
 </div>
 
 <!-- Контейнер с вертикальной полосой -->
