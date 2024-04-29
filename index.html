@@ -36,6 +36,7 @@ body {
   position: absolute; /* Устанавливаем позицию абсолютно */
   top: 20px; /* Отступ сверху */
   left: 20px; /* Отступ слева */
+  z-index: 888; /* Устанавливаем значение z-index */
 }
 
 .button {
@@ -48,7 +49,6 @@ body {
   transition: background-color 0.3s, color 0.3s; /* Анимация при изменении цвета */
   border: none; /* Убираем границу */
   outline: none; /* Убираем обводку при фокусе */
-  z-index: 888
 }
 
 
@@ -157,12 +157,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 51, 32, 0.9); /* Цвет фона уведомления */
-  color: black; /* Цвет текста уведомления */
+  color: white; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
 }
-
 
 @media screen and (max-width: 480px) {
   .flex-item img {
@@ -186,12 +185,11 @@ body {
   <!-- Изображение в хедере -->
   <img id="header-image" src="header_image.png" alt="Header Image">
   <!-- Кнопки -->
-   <div class="buttons">
   <div class="buttons">
     <button class="button" id="login-button">Вход</button>
     <button class="button" id="register-button">Регистрация</button>
-    <a href="FAQ.html" class="button">FAQ</a>
-    <a href="CreatePage.html" class="button">Создать страницу</a>
+    <button class="button" id="create-page-button">Создать страницу</button>
+    <button class="button" id="faq-button">FAQ</button>
   </div>
 </div>
 
