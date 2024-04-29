@@ -156,11 +156,18 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 51, 32, 0.9); /* Цвет фона уведомления */
-  color: white; /* Цвет текста уведомления */
+  background-color: #fffef8; /* Цвет фона уведомления */
+  color: #003320; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
+  border: 1px solid black; /* Черная обводка */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
+  opacity: 0; /* Начальное значение непрозрачности */
+  transition: opacity 0.3s; /* Плавность анимации появления и исчезания */
+}
+
+.notification.active {
+  opacity: 1; /* Устанавливаем полную непрозрачность при активации */
 }
 
 @media screen and (max-width: 480px) {
@@ -231,24 +238,24 @@ body {
 </div>
 
 <!-- Всплывающее уведомление -->
-<div id="notification" class="notification" style="display: none;"></div>
+<div id="notification" class="notification">Функционал находится в процессе разработки.</div>
   
 <script>
-  // Функция для показа всплывающего уведомления
-function showNotification(message) {
-  const notification = document.getElementById('notification');
-  notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
-  notification.style.display = 'block';
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000); // Скрыть уведомление через 3 секунды
-}
-
 // Получаем ссылки на кнопки
 const loginButton = document.getElementById('login-button');
 const registerButton = document.getElementById('register-button');
 const createPageButton = document.getElementById('create-page-button');
 const faqButton = document.getElementById('faq-button');
+
+// Функция для отображения всплывающего уведомления
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
+  notification.classList.add('active'); // Добавляем класс для активации анимации
+  setTimeout(() => {
+    notification.classList.remove('active'); // Удаляем класс после истечения таймера
+  }, 3000); // Скрыть уведомление через 3 секунды
+}
 
 // Добавляем обработчики событий для каждой кнопки
 loginButton.addEventListener('click', function() {
@@ -270,3 +277,4 @@ faqButton.addEventListener('click', function() {
 
 </body>
 </html>
+
