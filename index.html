@@ -48,6 +48,7 @@ body {
   transition: background-color 0.3s, color 0.3s; /* Анимация при изменении цвета */
   border: none; /* Убираем границу */
   outline: none; /* Убираем обводку при фокусе */
+  z-index: 888
 }
 
 
@@ -159,7 +160,7 @@ body {
   color: black; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
-  z-index: 9999; /* Устанавливаем высокий индекс слоя */
+  z-index: 999; /* Устанавливаем высокий индекс слоя */
 }
 
 
@@ -186,8 +187,9 @@ body {
   <img id="header-image" src="header_image.png" alt="Header Image">
   <!-- Кнопки -->
    <div class="buttons">
-    <a href="Error.html" class="button">Вход</a>
-    <a href="Error.html" class="button">Регистрация</a>
+  <div class="buttons">
+    <button class="button" id="login-button">Вход</button>
+    <button class="button" id="register-button">Регистрация</button>
     <a href="FAQ.html" class="button">FAQ</a>
     <a href="CreatePage.html" class="button">Создать страницу</a>
   </div>
