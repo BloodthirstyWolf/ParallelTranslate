@@ -166,20 +166,20 @@ body {
   transition: opacity 0.3s; /* Плавность анимации появления и исчезания */
 }
 
+/* Активный стиль для уведомления */
 .notification.active {
-  opacity: 1; /* Устанавливаем полную непрозрачность при активации */
+  opacity: 1; /* Устанавливаем непрозрачность на 1 для показа */
 }
 
 /* Стили для второго контейнера */
 #second-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url('background1.png'); /* Фоновое изображение */
-  background-size: cover; /* Масштабирование изображения */
-  z-index: 0; /* Устанавливаем нижний индекс слоя */
+  z-index: -1; /* Устанавливаем нижний индекс слоя */
 }
 
 #second-container .text {
