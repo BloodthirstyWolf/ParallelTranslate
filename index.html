@@ -160,7 +160,6 @@ body {
   color: #003320; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
-  border: 1px solid black; /* Черная обводка */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
   display: none; /* Начальное скрытие */
   opacity: 0; /* Начальная прозрачность */
@@ -180,6 +179,7 @@ body {
   background-size: cover; /* Масштабирование изображения на всю площадь */
   background-position: center; /* Выравниваем изображение по центру */
   display: flex;
+  flex-direction: row; /* Располагаем элементы горизонтально */
 }
 
 .text-container {
@@ -271,7 +271,7 @@ function showNotification(message) {
   notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
   notification.classList.add('active'); // Добавляем класс для активации анимации
   setTimeout(() => {
-    notification.classList.remove('active'); // Удаляем класс после истечения таймера
+    notification.classList.remove('active'); // Удаляем класс после исчезновения анимации
   }, 3000); // Скрыть уведомление через 3 секунды
 }
 
@@ -295,4 +295,3 @@ faqButton.addEventListener('click', function() {
 
 </body>
 </html>
-
