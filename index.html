@@ -160,49 +160,59 @@ body {
   color: #003320; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
+  border: 1px solid black; /* Черная обводка */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
-  display: none; /* Начальное скрытие */
-  opacity: 0; /* Начальная прозрачность */
-  transition: opacity 0.3s, visibility 0.3s; /* Анимация плавного появления и исчезания */
+  opacity: 0; /* Начальное значение непрозрачности */
+  transition: opacity 0.3s; /* Плавность анимации появления и исчезания */
 }
 
 .notification.active {
-  display: block; /* Показываем уведомление */
-  opacity: 1; /* Устанавливаем полную непрозрачность */
+  opacity: 1; /* Устанавливаем полную непрозрачность при активации */
 }
 
-/* Второй контейнер */
+/* Стили для второго контейнера */
 #second-container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Занимает 100% высоты экрана */
   background-image: url('background1.png'); /* Фоновое изображение */
-  background-size: cover; /* Масштабирование изображения на всю площадь */
-  background-position: center; /* Выравниваем изображение по центру */
-  display: flex;
-  flex-direction: row; /* Располагаем элементы горизонтально */
-}
-
-.text-container {
-  width: 50%;
+  background-size: cover; /* Масштабируем изображение на всю ширину и высоту */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью */
-  border-radius: 10px; /* Закругляем углы */
-  margin: 10px;
 }
 
+#second-container .text {
+  color: white; /* Цвет текста */
+  font-size: 24px; /* Размер шрифта */
+}
+
+#second-container .text p {
+  margin: 0; /* Убираем внешние отступы параграфа */
+}
+
+@media screen and (max-width: 480px) {
+  .flex-item img {
+    width: 100%; /* изображения занимают 100% ширины родительского элемента */
+    height: auto; /* высота автоматически регулируется */
+  }
+
+  /* Уменьшенный размер кругов и номеров на мобильных устройствах */
+  .circle {
+    width: 1.5em; /* уменьшаем размер кругов */
+    height: 1.5em; /* уменьшаем размер кругов */
+    font-size: 1em; /* уменьшаем размер шрифта */
+  }
+}
 </style>
 </head>
 <body>
 
 <!-- Второй контейнер -->
 <div id="second-container">
-  <div class="text-container">
-    <p style="color: #003320; font-size: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet posuere velit, eget vulputate odio. Nullam in nulla eget mi tincidunt congue. Integer consequat urna felis, at feugiat orci elementum ac. Sed at consequat sem, id rhoncus quam. Aenean eget sapien quam. Vestibulum a nunc sed magna maximus rhoncus. Proin ut est sed ex eleifend maximus. Donec auctor, risus a condimentum bibendum, eros velit posuere erat, nec dictum nulla leo nec dui. Nunc eget erat a nulla lobortis iaculis et eu purus. Cras volutpat risus ut scelerisque consequat.</p>
+  <div class="text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra ipsum vel libero dapibus, nec fermentum lacus tempus. Duis ac sapien ac lorem cursus volutpat.</p>
   </div>
-  <div class="text-container"></div>
 </div>
 
 <!-- Контейнер для хедера -->
@@ -271,7 +281,7 @@ function showNotification(message) {
   notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
   notification.classList.add('active'); // Добавляем класс для активации анимации
   setTimeout(() => {
-    notification.classList.remove('active'); // Удаляем класс после исчезновения анимации
+    notification.classList.remove('active'); // Удаляем класс после истечения таймера
   }, 3000); // Скрыть уведомление через 3 секунды
 }
 
@@ -295,3 +305,4 @@ faqButton.addEventListener('click', function() {
 
 </body>
 </html>
+
