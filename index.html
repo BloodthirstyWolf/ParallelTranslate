@@ -52,7 +52,6 @@ body {
   outline: none; /* Убираем обводку при фокусе */
 }
 
-
 .button:hover {
   background-color: #003320; /* Цвет фона кнопки при наведении */
   color: white; /* Цвет текста кнопки при наведении */
@@ -104,7 +103,7 @@ body {
   width: 0.8vw;
   height: 80vh;
   background-color: #003320;
-  z-index: 1; /* Устанавливаем значение z-index */
+  z-index: 1;
   margin: 0 auto; /* Добавлено */
 }
 
@@ -162,25 +161,25 @@ body {
   color: #003320; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
-  border: 1px solid black; /* Добавляем черную обводку */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
-  display: none; /* Начальное состояние: скрыто */
-  opacity: 0; /* Начальная прозрачность: 0 */
-  transition: opacity 0.5s; /* Анимация плавного появления и исчезания */
+  border: 1px solid #000; /* Добавляем 1px черную обводку */
+  display: none; /* Скрыть уведомление по умолчанию */
+  opacity: 0; /* Начальное значение непрозрачности */
+  transition: opacity 0.3s; /* Анимация плавного появления и исчезания */
 }
 
+/* Активный стиль для уведомления */
 .notification.active {
   opacity: 1; /* Устанавливаем непрозрачность на 1 для показа */
 }
 
 /* Стили для второго контейнера */
 #second-container {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-image: url('background1.png'); /* Фоновое изображение */
+  background-size: cover;
+  background-position: center;
   z-index: 1; /* Устанавливаем значение z-index */
 }
 
