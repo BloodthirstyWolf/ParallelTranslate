@@ -1,104 +1,294 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Header and Second Container</title>
+<title>Registration</title>
 <style>
-body, html {
-  margin: 0; /* Убираем внешние отступы */
-  padding: 0; /* Убираем внутренние отступы */
+
+@font-face {
+  font-family: 'Vela Sans';
+  src: url('Vela Sans.ttf') format('truetype');
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-/* Стили для хедера */
+/* Создаем стили для хедера */
 #header-container {
   position: relative; /* Устанавливаем позицию относительно */
   width: 100%;
   text-align: center; /* Выравниваем текст по центру */
   color: white; /* Устанавливаем белый цвет текста */
-  z-index: 2; /* Помещаем хедер выше второго контейнера */
+  z-index: 1; /* Устанавливаем значение z-index */
 }
 
+/* Стили для фонового изображения внутри хедера */
 #header-image {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Изображение занимает всю доступную ширину */
+  height: auto; /* Автоматически регулируем высоту, чтобы сохранить пропорции */
 }
 
+/* Стили для кнопок */
 .buttons {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: absolute; /* Устанавливаем позицию абсолютно */
+  top: 20px; /* Отступ сверху */
+  left: 20px; /* Отступ слева */
+  z-index: 1; /* Устанавливаем значение z-index */
 }
 
 .button {
-  background-color: #fffef8;
-  color: #003320;
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  border: none;
-  outline: none;
+  background-color: #fffef8; /* Цвет фона кнопки */
+  color: #003320; /* Цвет текста кнопки */
+  padding: 10px 20px; /* Внутренние отступы кнопки */
+  border-radius: 20px; /* Закругляем углы кнопки */
+  margin-right: 10px; /* Внешний отступ справа */
+  cursor: pointer; /* Задаем курсор при наведении на кнопку */
+  transition: background-color 0.3s, color 0.3s; /* Анимация при изменении цвета */
+  border: none; /* Убираем границу */
+  outline: none; /* Убираем обводку при фокусе */
 }
 
 .button:hover {
-  background-color: #003320;
-  color: white;
+  background-color: #003320; /* Цвет фона кнопки при наведении */
+  color: white; /* Цвет текста кнопки при наведении */
 }
 
-#second-container {
-  position: relative;
+/* Создаем стили для остальных контейнеров */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%; /* Устанавливаем ширину контейнеров */
+  margin: 20px auto; /* Устанавливаем отступы сверху и снизу */
+}
+
+
+.flex-item {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.flex-item img {
+  width: 70%; /* изображения занимают 100% ширины родительского элемента */
+  height: auto; /* высота автоматически регулируется */
+}
+
+.flex-item.text {
+  flex-basis: 45%;
+  font-family: 'Vela Sans', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+.text {
+  margin: 0;
   width: 100%;
-  height: 100%; /* Заменяем 100vh на 100% */
-  background-image: url('background1.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
 }
 
-
-#second-container .content {
+#top-bar {
   position: absolute;
+  top: 10vh;
+  left: 0; /* Изменено */
+  right: 0; /* Добавлено */
+  width: 0.8vw;
+  height: 80vh;
+  background-color: #003320;
+  z-index: 1;
+  margin: 0 auto; /* Добавлено */
+}
+
+#decorative-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Устанавливаем значение z-index */
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4em; /* Размер кругов */
+  height: 4em; /* Размер кругов */
+  border-radius: 50%;
+  background-color: #003320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+/* Для первого круга */
+.circle:nth-child(1) {
+  top: 10vh; /* Положение первого круга */
+}
+
+/* Для второго круга */
+.circle:nth-child(2) {
+  top: 50vh; /* Положение второго круга */
+}
+
+/* Для третьего круга */
+.circle:nth-child(3) {
+  top: 125vh; /* Положение третьего круга */
+}
+
+/* Для четвертого круга */
+.circle:nth-child(4) {
+  top: 190vh; /* Положение четвертого круга */
+}
+
+/* Стили для всплывающего уведомления */
+.notification {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #fffef8; /* Цвет фона уведомления */
+  color: #003320; /* Цвет текста уведомления */
+  padding: 20px; /* Внутренние отступы уведомления */
+  border-radius: 10px; /* Закругляем углы уведомления */
+  z-index: 999; /* Устанавливаем высокий индекс слоя */
+  border: 1px solid #000; /* Добавляем 1px черную обводку */
+  display: none; /* Скрыть уведомление по умолчанию */
+  opacity: 0; /* Начальное значение непрозрачности */
+  transition: opacity 0.3s; /* Анимация плавного появления и исчезания */
 }
 
-#second-container .content p {
-  color: #003320;
-  font-size: 1.2em;
-  line-height: 1.5;
-  text-align: center;
+/* Активный стиль для уведомления */
+.notification.active {
+  opacity: 1; /* Устанавливаем непрозрачность на 1 для показа */
+}
+
+/* Стили для второго контейнера */
+#second-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('background1.png'); /* Фоновое изображение */
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Устанавливаем значение z-index */
+}
+
+#second-container .text {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 24px;
 }
 
 </style>
 </head>
 <body>
 
-<!-- Хедер -->
+<!-- Контейнер для хедера -->
 <div id="header-container">
+  <!-- Изображение в хедере -->
   <img id="header-image" src="header_image.png" alt="Header Image">
+  <!-- Кнопки -->
   <div class="buttons">
-    <button class="button" onclick="showNotification('Вход')">Вход</button>
-    <button class="button" onclick="showNotification('Регистрация')">Регистрация</button>
-    <button class="button" onclick="showNotification('Создать страницу')">Создать страницу</button>
-    <button class="button" onclick="showNotification('FAQ')">FAQ</button>
+    <button class="button" id="login-button">Вход</button>
+    <button class="button" id="register-button">Регистрация</button>
+    <button class="button" id="create-page-button">Создать страницу</button>
+    <button class="button" id="faq-button">FAQ</button>
   </div>
 </div>
 
 <!-- Второй контейнер -->
 <div id="second-container">
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+  <div class="text">
+    <!-- Текст в левой части второго контейнера -->
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
   </div>
 </div>
+
+<!-- Контейнер с вертикальной полосой -->
+<div id="Container3">
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point1.png" alt="Point 1">
+    </div>
+    <div class="flex-item text">
+      <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item text">
+      <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+    </div>
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="Point2.png" alt="Point 2">
+    </div>
+    <div class="flex-item text">
+      <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+    </div>
+  </div>
+</div>
+
+<!-- Вертикальная полоса -->
+<div id="top-bar"></div>
+<div id="decorative-container">
+  <div class="circle"></div> <!-- Пустой круг для начала -->
+  <div class="circle">1</div>
+  <div class="circle">2</div>
+  <div class="circle">3</div>
+</div>
+
+<!-- Всплывающее уведомление -->
+<div id="notification" class="notification">Функционал находится в процессе разработки.</div>
+  
+<script>
+// Получаем ссылки на кнопки
+const loginButton = document.getElementById('login-button');
+const registerButton = document.getElementById('register-button');
+const createPageButton = document.getElementById('create-page-button');
+const faqButton = document.getElementById('faq-button');
+
+// Функция для отображения всплывающего уведомления
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
+  notification.classList.add('active'); // Добавляем класс для активации анимации
+  setTimeout(() => {
+    notification.classList.remove('active'); // Удаляем класс после истечения таймера
+  }, 3000); // Скрыть уведомление через 3 секунды
+}
+
+// Добавляем обработчики событий для каждой кнопки
+loginButton.addEventListener('click', function() {
+  showNotification('Вход');
+});
+
+registerButton.addEventListener('click', function() {
+  showNotification('Регистрация');
+});
+
+createPageButton.addEventListener('click', function() {
+  showNotification('Создание страницы');
+});
+
+faqButton.addEventListener('click', function() {
+  showNotification('FAQ');
+});
+</script>
 
 </body>
 </html>
