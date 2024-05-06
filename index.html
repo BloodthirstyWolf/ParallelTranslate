@@ -66,6 +66,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   flex-grow: 1;
+  z-index: 1; /* Устанавливаем значение z-index */
 }
 
 .flex-item {
@@ -103,7 +104,7 @@ body {
   width: 0.8vw;
   height: 80vh;
   background-color: #003320;
-  z-index: 1;
+  z-index: 1; /* Устанавливаем значение z-index */
   margin: 0 auto; /* Добавлено */
 }
 
@@ -113,7 +114,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 1; /* Устанавливаем значение z-index */
 }
 
 .circle {
@@ -161,25 +162,22 @@ body {
   color: #003320; /* Цвет текста уведомления */
   padding: 20px; /* Внутренние отступы уведомления */
   border-radius: 10px; /* Закругляем углы уведомления */
+  border: 1px solid black; /* Добавляем черную обводку */
   z-index: 999; /* Устанавливаем высокий индекс слоя */
-  display: none; /* Изначально скрываем уведомление */
-  animation: fadeInOut 1.5s ease-in-out; /* Анимация плавного появления и исчезания */
-  border: 1px solid black; /* Черная обводка */
+  display: none; /* Начальное состояние: скрыто */
+  opacity: 0; /* Начальная прозрачность: 0 */
+  transition: opacity 0.5s; /* Анимация плавного появления и исчезания */
 }
 
-/* Анимация плавного появления и исчезания */
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+.notification.active {
+  opacity: 1; /* Устанавливаем непрозрачность на 1 для показа */
 }
 
 /* Стили для второго контейнера */
 #second-container {
-  position: relative; /* Устанавливаем позицию относительно */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-image: url('background1.png'); /* Фоновое изображение */
@@ -271,10 +269,10 @@ const faqButton = document.getElementById('faq-button');
 function showNotification(message) {
   const notification = document.getElementById('notification');
   notification.textContent = `Функционал "${message}" находится в процессе разработки.`;
-  notification.style.display = 'block'; // Отображаем уведомление
+  notification.classList.add('active'); // Добавляем класс для активации анимации
   setTimeout(() => {
-    notification.style.display = 'none'; // Скрываем уведомление через 3 секунды
-  }, 3000);
+    notification.classList.remove('active'); // Удаляем класс после истечения таймера
+  }, 3000); // Скрыть уведомление через 3 секунды
 }
 
 // Добавляем обработчики событий для каждой кнопки
