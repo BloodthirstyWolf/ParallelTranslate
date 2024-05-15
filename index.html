@@ -11,26 +11,24 @@
         height: 100%;
     }
 
- #header-container {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    margin-top: 0; /* Убираем верхний отступ */
-    margin-bottom: 0; /* Убираем нижний отступ */
-    background-size: 100% 100%;
-}
-
+    #header-container {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        color: white;
+        z-index: 2;
+        margin-top: 0; /* Убираем верхний отступ */
+        margin-bottom: 0; /* Убираем нижний отступ */
+        background-size: 100% 100%;
+    }
 
     #header-image {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
 
     .buttons {
         position: absolute;
@@ -60,14 +58,14 @@
         width: 100%;
     }
 
- .container-1 {
-    min-height: 100vh; /* Минимальная высота первого контейнера равна высоте экрана */
-    background-image: url('background1.png'); /* Изображение на фоне первого контейнера */
-    background-size: cover; /* Растягиваем изображение на весь контейнер */
-    background-position: center; /* Выравнивание изображения по центру */
-    margin-top: 0;
-}
-
+    .container-1 {
+        min-height: 100vh; /* Минимальная высота первого контейнера равна высоте экрана */
+        background-image: url('background1.png'); /* Изображение на фоне первого контейнера */
+        background-size: contain; /* Масштабируем изображение, чтобы оно всегда было видно полностью */
+        background-repeat: no-repeat; /* Убираем повторение изображения */
+        background-position: center; /* Выравнивание изображения по центру */
+        margin-top: 0;
+    }
 
     .container-2 {
         height: 150vh; /* Высота второго контейнера 150% высоты экрана */
