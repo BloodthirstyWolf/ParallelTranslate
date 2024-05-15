@@ -122,12 +122,15 @@
     }
 
     /* Добавленные стили для десктопной версии */
-    @media (min-width: 768px) {
-        #second-container .flex-item img {
-            max-width: 100%;
-            height: auto;
-            margin-right: 20px; /* Добавляем отступ между изображениями */
-        }
+  @media (min-width: 768px) {
+    /* Добавляем отступы для изображений внутри flexbox контейнеров на десктопной версии */
+    #second-container .flex-item img {
+        margin: 0 50px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
     }
 </style>
 </head>
