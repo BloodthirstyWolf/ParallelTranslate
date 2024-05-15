@@ -121,13 +121,14 @@
         text-align: center;
     }
 
-    /* Медиа-запрос для десктопной версии */
+    /* Добавленные стили для десктопной версии */
     @media (min-width: 768px) {
-        #second-container img {
-            width: 90%; /* Изменяем размер изображений внутри flexbox контейнеров на десктопной версии */
+        #second-container .flex-item img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Добавляем отступ между изображениями */
         }
     }
-
 </style>
 </head>
 <body>
