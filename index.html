@@ -84,7 +84,53 @@
         background-size: cover;
         background-position: center;
         z-index: 1;
-        overflow: hidden;
+        padding-top: 20px;
+    }
+
+    #second-container h2 {
+        color: #003320;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #second-container .flex-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    #second-container .flex-container::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10%;
+        height: 10%;
+        border-radius: 50%;
+        background-color: #003320;
+        z-index: 1;
+    }
+
+    #second-container .flex-item {
+        flex: 1;
+        max-width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #second-container .flex-item img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #second-container .text {
+        flex: 3;
+        text-align: center;
     }
 
     #second-container .content {
@@ -96,7 +142,6 @@
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 2;
     }
 
     #second-container .content p {
@@ -106,69 +151,13 @@
         text-align: center;
     }
 
-    /* Вертикальная полоса и круги */
-    #top-bar {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 2px;
-        height: calc(100% - 100px); /* 100px для высоты хедера и кнопок */
-        background-color: #003320;
-        transform: translateX(-50%);
-        z-index: 3;
+    @media (min-width: 768px) {
+        /* Сужаем изображения на десктопной версии */
+        #second-container .flex-item img {
+            max-width: 80%;
+        }
     }
 
-    #decorative-container {
-        position: absolute;
-        top: 50px; /* Учитываем высоту хедера */
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: calc(100% - 50px); /* 50px для высоты хедера */
-        z-index: 3;
-    }
-
-    .circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: #003320;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.8em;
-    }
-
-    .flex-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20px 0;
-        position: relative;
-        z-index: 2;
-    }
-
-    .flex-item {
-        flex: 1;
-    }
-
-    .flex-item img {
-        max-width: 100%;
-        height: auto;
-        margin-right: 20px;
-    }
-
-    .flex-item.text p{
-        margin: 0;
-    }
-
-    .flex-item.text p {
-        margin: 0;
-    }
 </style>
 </head>
 <body>
@@ -191,17 +180,29 @@
 </div>
 
 <div id="second-container">
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    <h2>Как использовать?</h2>
+    <div class="flex-container">
+        <div class="flex-item"></div>
+        <div class="flex-item text">
+            <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+        </div>
     </div>
-</div>
-
-<!-- Вертикальная полоса и круги -->
-<div id="top-bar"></div>
-<div id="decorative-container">
-    <div class="circle">1</div>
-    <div class="circle">2</div>
-    <div class="circle">3</div>
+    <div class="flex-container">
+        <div class="flex-item text">
+            <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+        </div>
+        <div class="flex-item">
+            <img src="Point2.png" alt="Point 2">
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="Point3.png" alt="Point 3">
+        </div>
+        <div class="flex-item text">
+            <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+        </div>
+    </div>
 </div>
 
 </body>
