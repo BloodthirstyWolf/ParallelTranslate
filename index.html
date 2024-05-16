@@ -95,7 +95,15 @@
 
     #second-container .flex-item {
         flex: 1;
+        max-width: 50%;
         padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #second-container .flex-item img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     #second-container .text {
@@ -121,18 +129,13 @@
         text-align: center;
     }
 
-    /* Добавленные стили для десктопной версии */
- @media (min-width: 768px) {
-    /* Добавляем отступы внутри flex-элементов для изображений на десктопной версии */
-    #second-container .flex-item img {
-        margin: 0 10px; /* отступы внутри flex-элементов */
-        max-width: calc(100% - 20px); /* вычитаем два отступа по 10px */
-        height: auto;
+    @media (min-width: 768px) {
+        /* Сужаем изображения на десктопной версии */
+        #second-container .flex-item img {
+            max-width: 80%;
+        }
     }
-}
 
-
-    }
 </style>
 </head>
 <body>
