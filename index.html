@@ -59,24 +59,22 @@
     }
 
     .container-1 {
-    min-height: 100vh;
-    width: 100%;
-    background-image: url('background_image.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-    position: relative; /* Добавляем позиционирование для описания */
-}
+        min-height: 100vh;
+        width: 100%;
+        background-image: url('background_image.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+    }
 
-.container-1 .description {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    color: white;
-}
-
+    .container-1 .description {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: white;
+    }
 
     #second-container {
         position: relative;
@@ -86,13 +84,11 @@
         background-size: cover;
         background-position: center;
         z-index: 1;
-        padding-top: 20px;
     }
 
     #second-container h2 {
         color: #003320;
         text-align: center;
-        margin-bottom: 20px;
     }
 
     #second-container .flex-container {
@@ -103,17 +99,15 @@
         margin-bottom: 20px;
     }
 
-    #second-container .flex-container::after {
-        content: "";
+    #second-container .circle {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 10%;
         height: 10%;
-        border-radius: 50%;
         background-color: #003320;
-        z-index: 1;
+        border-radius: 50%;
+        left: 45%; /* Центрируем по горизонтали */
+        top: 45%; /* Центрируем по вертикали */
+        z-index: 1; /* Устанавливаем поверх других элементов */
     }
 
     #second-container .flex-item {
@@ -121,7 +115,6 @@
         max-width: 50%;
         padding: 10px;
         box-sizing: border-box;
-        position: relative;
     }
 
     #second-container .flex-item img {
@@ -174,7 +167,7 @@
     </div>
 </div>
 
-<div class="container-1">
+<div class="container container-1">
     <div class="description">
         <h1>Описание</h1>
         <p>Здесь вы можете добавить описание вашего сайта или чего-то еще, что вам нужно.</p>
@@ -184,12 +177,16 @@
 <div id="second-container">
     <h2>Как использовать?</h2>
     <div class="flex-container">
-        <div class="flex-item"></div>
+        <div class="circle"></div>
+        <div class="flex-item">
+            <img src="Point1.png" alt="Point 1">
+        </div>
         <div class="flex-item text">
             <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
         </div>
     </div>
     <div class="flex-container">
+        <div class="circle"></div>
         <div class="flex-item text">
             <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
         </div>
@@ -198,8 +195,9 @@
         </div>
     </div>
     <div class="flex-container">
+        <div class="circle"></div>
         <div class="flex-item">
-            <img src="Point3.png" alt="Point 3">
+            <img src="Point3.png" alt="Point 2">
         </div>
         <div class="flex-item text">
             <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
