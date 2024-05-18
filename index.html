@@ -173,11 +173,17 @@
         z-index: 1;
     }
 
-    @media (min-width: 768px) {
-        /* Сужаем изображения на десктопной версии */
-        #second-container .flex-item img {
-            max-width: 80%;
-        }
+   @media (min-width: 768px) {
+    /* Сужаем изображения на десктопной версии */
+    #second-container .flex-item img {
+        max-width: 80%;
+    }
+
+    /* Увеличиваем размер текста в элементе .description в два раза */
+    .description {
+        font-size: 2em;
+    }
+}
     }
 </style>
 </head>
