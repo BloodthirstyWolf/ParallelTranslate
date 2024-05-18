@@ -172,17 +172,23 @@
         transform: translateX(-50%);
         z-index: 1;
     }
-    .description {
+   .description {
     position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
     width: 50%;
-    display: flex; /* Добавляем flex-контейнер */
-    flex-direction: column; /* Устанавливаем направление столбцом */
-    justify-content: center; /* Центрируем вертикально */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-        
+
+@media (max-width: 768px) {
+    .description {
+        top: 0;
+        left: 10%;
+        transform: translateY(0);
+    }
+}
+
+  
 
    @media (min-width: 768px) {
     /* Сужаем изображения на десктопной версии */
@@ -193,8 +199,9 @@
     /* Увеличиваем размер текста в элементе .description в два раза */
     .description {
         font-size: 2em;
-    }
-}
+        bottom: 30%;
+        left: 10%;
+        transform: translateY(0);
     }
 </style>
 </head>
