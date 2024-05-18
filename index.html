@@ -84,30 +84,29 @@
         background-size: cover;
         background-position: center;
         z-index: 1;
+        padding: 20px 0;
     }
 
     #second-container h2 {
-        color: #003320;
         text-align: center;
+        color: #003320;
+        margin-bottom: 20px;
+    }
+
+    .green-circle {
+        width: 10vw;
+        height: 10vw;
+        background-color: #003320;
+        border-radius: 50%;
+        margin: 0 auto 20px auto;
     }
 
     #second-container .flex-container {
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
-    }
-
-    #second-container .circle {
-        position: absolute;
-        width: 10%;
-        height: 10%;
-        background-color: #003320;
-        border-radius: 50%;
-        left: 45%; /* Центрируем по горизонтали */
-        top: 45%; /* Центрируем по вертикали */
-        z-index: 1; /* Устанавливаем поверх других элементов */
+        position: relative;
     }
 
     #second-container .flex-item {
@@ -128,22 +127,15 @@
         text-align: center;
     }
 
-    #second-container .content {
+    .circle-in-flex {
+        width: 10vw;
+        height: 10vw;
+        background-color: #003320;
+        border-radius: 50%;
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    #second-container .content p {
-        color: #003320;
-        font-size: 1.2em;
-        line-height: 1.5;
-        text-align: center;
+        transform: translateX(-50%);
+        z-index: 2;
     }
 
     @media (min-width: 768px) {
@@ -152,7 +144,6 @@
             max-width: 80%;
         }
     }
-
 </style>
 </head>
 <body>
@@ -176,32 +167,33 @@
 
 <div id="second-container">
     <h2>Как использовать?</h2>
+    <div class="green-circle"></div>
     <div class="flex-container">
-        <div class="circle"></div>
         <div class="flex-item">
             <img src="Point1.png" alt="Point 1">
         </div>
         <div class="flex-item text">
             <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
         </div>
+        <div class="circle-in-flex"></div>
     </div>
     <div class="flex-container">
-        <div class="circle"></div>
         <div class="flex-item text">
             <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
         </div>
         <div class="flex-item">
             <img src="Point2.png" alt="Point 2">
         </div>
+        <div class="circle-in-flex"></div>
     </div>
     <div class="flex-container">
-        <div class="circle"></div>
         <div class="flex-item">
-            <img src="Point3.png" alt="Point 2">
+            <img src="Point3.png" alt="Point 3">
         </div>
         <div class="flex-item text">
             <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
         </div>
+        <div class="circle-in-flex"></div>
     </div>
 </div>
 
