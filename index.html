@@ -126,6 +126,8 @@
         max-width: 50%;
         padding: 10px;
         box-sizing: border-box;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
     #second-container .flex-item img {
@@ -140,8 +142,8 @@
     }
 
     .circle-in-flex {
-        width: 5vw;
-        height: 5vw;
+        width: 10vw;
+        height: 10vw;
         background-color: #003320;
         border-radius: 50%;
         position: absolute;
@@ -165,18 +167,10 @@
         width: 4px;
         background-color: #003320;
         left: 50%;
-        top: 120px; /* Начало линии ниже заголовка и первого круга */
+        top: 130px; /* Начало линии ниже заголовка и первого круга */
         bottom: 20px; /* Линия до конца контейнера */
         transform: translateX(-50%);
         z-index: 1;
-    }
-
-    .text-1, .text-3 {
-        padding-left: 10%;
-    }
-
-    .text-2 {
-        padding-right: 10%;
     }
 
     @media (min-width: 768px) {
@@ -214,13 +208,13 @@
         <div class="flex-item">
             <img src="Point1.png" alt="Point 1">
         </div>
-        <div class="flex-item text text-1">
+        <div class="flex-item text">
             <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
         </div>
         <div class="circle-in-flex"><span>2</span></div>
     </div>
     <div class="flex-container">
-        <div class="flex-item text text-2">
+        <div class="flex-item text">
             <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
         </div>
         <div class="flex-item">
@@ -232,7 +226,7 @@
         <div class="flex-item">
             <img src="Point3.png" alt="Point 3">
         </div>
-        <div class="flex-item text text-3">
+        <div class="flex-item text">
             <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
         </div>
         <div class="circle-in-flex"><span>4</span></div>
