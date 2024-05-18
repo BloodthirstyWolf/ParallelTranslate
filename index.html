@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -100,6 +100,7 @@
         border-radius: 50%;
         margin: 0 auto 20px auto;
         position: relative;
+        z-index: 2;
     }
 
     .green-circle span {
@@ -164,8 +165,8 @@
         width: 4px;
         background-color: #003320;
         left: 50%;
-        top: 0;
-        bottom: 0;
+        top: 50px; /* Старт линии ниже заголовка */
+        bottom: 20px; /* Завершение линии до конца контейнера */
         transform: translateX(-50%);
         z-index: 1;
     }
