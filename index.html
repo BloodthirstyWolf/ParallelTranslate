@@ -139,6 +139,7 @@
     #second-container .text {
         flex: 3;
         text-align: center;
+        font-size: 1.5em; /* Увеличиваем размер текста */
     }
 
     .circle-in-flex {
@@ -186,10 +187,6 @@
         top: 10%; /* Центрирование по верху для мобильных устройств */
          justify-content: center
     }
-    
-    #second-container .flex-item {
-         padding-left: 5%;
-        padding-right: 5%;
 }
 
 
@@ -197,6 +194,7 @@
     /* Сужаем изображения на десктопной версии */
     #second-container .flex-item img {
         max-width: 80%;
+        margin-left: 10%; /* Добавляем отступ слева только на десктопе */
     }
 
     /* Увеличиваем размер текста в элементе .description в два раза */
@@ -206,12 +204,7 @@
         bottom: 30%;
         left: 10%;
         transform: translateY(0);
-    
     }
-        
-    #second-container .flex-item {
-         padding-left: 10%;
-        padding-right: 10%;
 }
 
 </style>
