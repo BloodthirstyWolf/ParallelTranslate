@@ -207,7 +207,102 @@
     }
 }
 
+/* Модальное окно стили */
+.modal {
+    display: none; /* Скрыть модальное окно по умолчанию */
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Ширина модального окна для десктопа */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-form input[type=text],
+.modal-form input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-form button {
+    background-color: #003320;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-form button:hover {
+    background-color: #001a11;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 </style>
+<script>
+    // Функция для открытия модального окна
+    function showModal(title) {
+        var modal = document.getElementById('modal');
+        var modalTitle = document.getElementById('modalTitle');
+        modal.style.display = 'block';
+        modalTitle.textContent = title;
+    }
+
+    // Функция для закрытия модального окна
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+
+    // Обработчики событий для кнопок Вход и Регистрация
+    document.getElementsByClassName('button')[0].addEventListener('click', function() {
+        showModal('Вход');
+    });
+
+    document.getElementsByClassName('button')[1].addEventListener('click', function() {
+        showModal('Регистрация');
+    });
+
+    // Обработчик отправки формы в модальном окне (пока заглушка)
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Форма отправлена!');
+        closeModal(); // Закрываем модальное окно после отправки формы (замените эту строку на отправку данных на сервер)
+    });
+</script>
+
 </head>
 <body>
 
@@ -258,6 +353,19 @@
             <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
         </div>
         <div class="circle-in-flex"><span>3</span></div>
+    </div>
+</div>
+
+<!-- Модальное окно для входа/регистрации -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Вход</h2>
+        <form id="loginForm" class="modal-form">
+            <input type="text" name="email" placeholder="Логин или почта" required><br><br>
+            <input type="password" name="password" placeholder="Пароль" required><br><br>
+            <button type="submit">Войти</button>
+        </form>
     </div>
 </div>
 
