@@ -1,99 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <style>
-    #language-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999; /* Устанавливаем высокий индекс, чтобы кнопка была поверх других элементов */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ParallelTranslate</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
     }
 
-    .text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    #header-container {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        color: white;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-size: 100% 100%;
     }
-  </style>
+
+    #header-image {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .button {
+        background-color: #fffef8;
+        color: #003320;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        outline: none;
+    }
+
+    .button:hover {
+        background-color: #003320;
+        color: white;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .container-1 {
+        min-height: 100vh;
+        width: 100%;
+        background-image: url('background_image.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+    }
+
+    .container-1 .description {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: white;
+    }
+
+    #second-container {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url('background2.png');
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+        padding: 20px 0;
+    }
+
+    #second-container h1 {
+        text-align: center;
+        color: #003320;
+        margin-bottom: 20px;
+    }
+
+    .green-circle {
+        width: 10vw;
+        height: 10vw;
+        background-color: #003320;
+        border-radius: 50%;
+        margin: 0 auto 20px auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .green-circle span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    #second-container .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    #second-container .flex-item {
+        flex: 1;
+        max-width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    #second-container .flex-item img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #second-container .text {
+        flex: 3;
+        text-align: center;
+        font-size: 1.5em; /* Увеличиваем размер текста */
+    }
+
+    .circle-in-flex {
+        width: 10vw;
+        height: 10vw;
+        background-color: #003320;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .circle-in-flex span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .line {
+        position: absolute;
+        width: 4px;
+        background-color: #003320;
+        left: 50%;
+        top: 130px; /* Начало линии ниже заголовка и первого круга */
+        bottom: 20px; /* Линия до конца контейнера */
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+   .description {
+    position: absolute;
+    left: 10%; /* Отступ слева */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+   ;
+}
+
+@media (max-width: 768px) {
+    .description {
+        top: 10%; /* Центрирование по верху для мобильных устройств */
+         justify-content: center
+    }
+}
+
+
+   @media (min-width: 768px) {
+    /* Сужаем изображения на десктопной версии */
+    #second-container .flex-item img {
+        max-width: 80%;
+        margin-left: 10%; /* Добавляем отступ слева только на десктопе */
+    }
+
+    /* Увеличиваем размер текста в элементе .description в два раза */
+    .description {
+        font-size: 2em;
+        position: absolute; /* Добавлено */
+        bottom: 30%;
+        left: 10%;
+        transform: translateY(0);
+    }
+}
+
+</style>
 </head>
 <body>
-  <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
 
-  <div class="container">
-    <div class="frame">
-      <div class="frame-content">
-        <div class="content">
-          <h1 class="portfolio-title">Portfolio</h1>
+<div id="header-container">
+    <img id="header-image" src="header_image.png" alt="Header Image">
+    <div class="buttons">
+        <button class="button" onclick="showNotification('Вход')">Вход</button>
+        <button class="button" onclick="showNotification('Регистрация')">Регистрация</button>
+        <button class="button" onclick="showNotification('Создать страницу')">Создать страницу</button>
+        <button class="button" onclick="showNotification('FAQ')">FAQ</button>
+    </div>
+</div>
+
+<div class="container container-1">
+    <div class="description">
+        <h1>О нас</h1>
+        <p>Parallel translate — это сервис, который помогает переводчикам удобнее демонстрировать примеры своих работ а редакторам удобно проверять результат их работы. Он позволяет сопоставлять текст на двух языках, сравнивать перевод и оригинал и удобно переключаться между языками.</p>
+    </div>
+</div>
+
+<div id="second-container">
+    <h1>Как использовать?</h1>
+    <div class="green-circle"></div>
+    <div class="line"></div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="Point1.png" alt="Point 1">
         </div>
-      </div>
+        <div class="flex-item text">
+            <p>1. Войдите в свой аккаунт и нажмите на кнопку "Создать новую страницу" в выпадающем меню или в личном кабинете</p>
+        </div>
+        <div class="circle-in-flex"><span>1</span></div>
     </div>
-  </div>
-
-  <div class="container">
-    <div class="photo"></div>
-    <div class="text">
-      <h1 id="about-heading">About me</h1>
-      <p id="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
-      <p style="font-size: 20px;">Однако в конечном итоге я решил отойти от фриланса, поняв, что это арена в основном для начинающих, где успех часто зависит от делегирования работы более низкооплачиваемым лицам. Я понял, что я вырос из фазы, когда нужно было всего лишь немного денег на развлечения для студентов; Я превратился в человека, желающего личного и профессионального роста. Со временем я осознал, что хочу большего, чем просто финансовые вознаграждения. Я хотел внести свой вклад в общество и способствовать благополучию других людей. Один из значимых шагов, который я сделал, был вступление в организацию, посвященную помощи людям с серьезными психическими и физическими проблемами здоровья. Хотя это началось как небольшая группа страстных людей, неуверенных в своем направлении, я внес свой вклад, переведя важные ресурсы, включая целую книгу, которая до сих пор является ценным ресурсом.</p>
+    <div class="flex-container">
+        <div class="flex-item text">
+            <p>2. Добавьте необходимое вам количество абзацев и вставьте русский и иностранный текст для каждого отдельного абзаца</p>
+        </div>
+        <div class="flex-item">
+            <img src="Point2.png" alt="Point 2">
+        </div>
+        <div class="circle-in-flex"><span>2</span></div>
     </div>
-  </div>
-
-  <div id="container">
-    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
-      <img class="ru" src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
-      <div>
-        <p class="frame-description">Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать</p>
-      </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="Point3.png" alt="Point 3">
+        </div>
+        <div class="flex-item text">
+            <p>3. Вы можете просматривать итоговый результат и делиться им с друзьями. При желании вы можете добавить возможность редактирования другим пользователям</p>
+        </div>
+        <div class="circle-in-flex"><span>3</span></div>
     </div>
-    <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
-      <img class="ru" src="https://i.postimg.cc/8PK37gGX/pexels-valeria-boltneva-7960255-1-round.png" alt="Image 2">
-      <div>
-        <p class="frame-description">Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
-      </div>
-    </div>
-    <div class="special-frame" onclick="window.location.href = 'Handmade.html'">
-      <img class="ru" src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
-      <div>
-        <p class="frame-description">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-container">
-    <h1>Contact Me</h1>
-    <p>If you want to contact me, please email me at:</p>
-   <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
-  </div>
-
-  <script>
-    function toggleLanguage() {
-      var currentLanguage = document.documentElement.lang || 'en';
-      if (currentLanguage === 'en') {
-        // Change text and links to Russian
-        document.documentElement.lang = 'ru';
-        document.getElementById('about-heading').innerText = 'Обо мне';
-        document.getElementById('about-text').innerText = 'С самого раннего возраста мой естественный талант к языкам стал очевидным. Их изучение происходило легко и естественно, и когда я решила заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начиная с работы переводчиком на языках, таких как английский, немецкий и японский. Со временем я расширила свои навыки, включив в них копирайтинг для SEO. Однако в конечном итоге я решил отойти от фриланса, поняв, что это арена в основном для начинающих, где успех часто зависит от делегирования работы более низкооплачиваемым лицам. Я понял, что я вырос из фазы, когда нужно было всего лишь немного денег на развлечения для студентов; Я превратился в человека, желающего личного и профессионального роста. Со временем я осознал, что хочу большего, чем просто финансовые вознаграждения. Я хотел внести свой вклад в общество и способствовать благополучию других людей. Один из значимых шагов, который я сделал, был вступление в организацию, посвященную помощи людям с серьезными психическими и физическими проблемами здоровья. Хотя это началось как небольшая группа страстных людей, неуверенных в своем направлении, я внес свой вклад, переведя важные ресурсы, включая целую книгу, которая до сих пор является ценным ресурсом.';
-document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-document.querySelectorAll('.frame-description').forEach(function(el) {
-el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать';
-});
-document.getElementById('language-toggle').innerText = 'Изменить язык';
-} else {
-// Change text and links to English
-document.documentElement.lang = 'en';
-document.getElementById('about-heading').innerText = 'About me';
-document.getElementById('about-text').innerText = 'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting. However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth. As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.';
-document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-document.querySelectorAll('.frame-description').forEach(function(el) {
-el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
-});
-document.getElementById('language-toggle').innerText = 'Toggle Language';
-}
-}
-</script>
+</div>
 
 </body>
 </html>
